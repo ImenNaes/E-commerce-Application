@@ -1,0 +1,99 @@
+﻿@model Business.Models.ContactSMS
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+    <!doctype html>
+    <html lang="en">
+    <head>
+        </head>
+    <body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "http://magento2.flytheme.net/themes/sm_zumi/pub/static/frontend/Sm/zumi/en_US/images/loader-2.gif"}}' class="header-1-style home-1-style footer-1-style layout-full_width  contact-index-index page-layout-1column">
+    <noscript>
+        
+        <div class="message global noscript"><div class="content"><p><strong>JavaScript seems to be disabled in your browser.</strong> <span>For the best experience on our site, be sure to turn on Javascript in your browser.</span></p></div></div></noscript>
+         <!-- BEGIN GTAG CART SCRIPT --> <!-- END GTAG CART SCRIPT -->  <div class="page-wrapper">
+             
+ 
+ <div class="header-top-wrapper">  <div class="page-title-wrapper"><h2 class="page-title"><span class="base" data-ui-id="page-title-wrapper">Contact Us</span></h2></div> </div>
+ <main id="maincontent" class="page-main">
+     <a id="contentarea" tabindex="-1"></a><div class="columns col1-layout">
+         <div class="container">
+             <div class="row">
+                 <div class="col-lg-12 col-md-12">
+                     <div class="page messages"> <div data-placeholder="messages"></div> <div data-bind="scope: 'messages'"><!-- ko if: cookieMessages && cookieMessages.length > 0 --><!-- /ko --><!-- ko if: messages().messages && messages().messages.length > 0 --><!-- /ko --></div></div><div class="column main">
+                         <input name="form_key" type="hidden" value="iRCZO1LVObfKRY1W"> <div id="authenticationPopup" data-bind="scope:'authenticationPopup'" style="display: none;">
+                             <script>
+                                 window.authenticationPopup = { "autocomplete": "off", "customerRegisterUrl": "http:\/\/magento2.flytheme.net\/themes\/sm_zumi\/customer\/account\/create\/", "customerForgotPasswordUrl": "http:\/\/magento2.flytheme.net\/themes\/sm_zumi\/customer\/account\/forgotpassword\/", "baseUrl": "http:\/\/magento2.flytheme.net\/themes\/sm_zumi\/" };</script><!-- ko template: getTemplate() -->
+                             <!-- /ko -->
+                         </div>      <div class="contact-us-page">
+                             <div class="row form-contact">
+                                 <div class="col-lg-12 col-md-12">
+                                     @using (Html.BeginForm("Index","Contact", FormMethod.Post, new { @class = "form contact", @id="contact-form" }))
+                                     {
+                                         @Html.AntiForgeryToken()
+
+                                             <fieldset class="fieldset">
+                                                 <div class="title-bonus-page"><h2>Contact Information</h2></div>
+                                                 <div class="left-input">
+                                                     <div class="row">
+                                                         <div class="col-lg-6 col-md-6 col-xs-12">
+                                                             <div class="field name required">
+                                                                 <div class="control">
+                                                                     @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", @id = "name", @placeholder = "Name*" } })
+                                                                     @Html.ValidationMessageFor(model => model.Name)
+                                                                     @*<input placeholder="Name*" name="name" id="name" title="Name" value="" class="input-text" type="text" data-validate="{required:true}" aria-required="true">*@
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+                                                         <div class="col-lg-6 col-md-6 col-xs-12">
+                                                             <div class="field email required">
+                                                                 <div class="control">
+                                                                     @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @id = "name", @placeholder = "Name*" } })
+                                                                 </div>
+                                                             </div>
+                                                         </div>
+                                                     </div>
+                                                     <div class="field subject">
+                                                         <div class="control">
+                                                             @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control", @id = "name", @placeholder = "Name*" } })
+                                                         </div>
+                                                     </div>
+                                                 
+                                                 </div>
+                                                 <div class="field comment required"><div class="control">
+    @*<textarea placeholder="Message*" name="comment" id="comment" title="What’s on your mind?" class="input-text" cols="5" rows="3" data-validate="{required:true}" aria-required="true"></textarea>*@
+    
+            @Html.TextAreaFor(model => model.Message, new { htmlAttributes = new { @class = "form-control", @id = "comment", @placeholder = "Message*", @cols="5", @rows="3" } })
+       
+</div></div>
+                                             </fieldset>
+                                             <div class="actions-toolbar"><div class="primary">
+                                                 <input type="hidden" name="hideit" id="hideit" value="">
+                                                 <button type="submit" title="Send Your Message" class="action submit primary"><span>Send Your Message</span>
+                                                     </button></div></div>
+                                             }
+                                     </div>
+                             </div>
+                           
+                     
+                     
+                     <div class="google-map">
+                                 <iframe style="border: 0;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8402891185415!2d144.95373631585633!3d-37.817209742014676!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d4c2b349649%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1svi!2s!4v1527494727294" width="100%" height="450" frameborder="0" allowfullscreen=""></iframe>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </main>
+        
+            
+           
+        </div>
+    </body>
+</html>
+

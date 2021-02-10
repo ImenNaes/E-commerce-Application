@@ -1,0 +1,506 @@
+﻿@model BLL.Entities.Product
+
+<!doctype html>
+<html lang="en">
+<head>
+    <link href="~/plugins/owl.carousel.css" rel="stylesheet" />
+</head>
+<body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "http://magento2.flytheme.net/themes/sm_zumi/pub/static/frontend/Sm/zumi/en_US/images/loader-2.gif"}}' itemtype="http://schema.org/Product" itemscope="itemscope" class="header-1-style home-1-style footer-1-style layout-full_width  catalog-product-view product-natural-organic-activated-coconut page-layout-1column">
+
+    <!-- BEGIN GTAG CART SCRIPT --> <!-- END GTAG CART SCRIPT -->  <div class="page-wrapper">
+
+        <div class="header-top-wrapper">
+            <div class="breadcrumbs">
+                <div class="container">
+                    <ul class="items">
+                        <li class="item home">
+                            <a href="" title="Go to Home Paga.sm_megamenu_heade">Products</a>
+                        </li>
+                        <li class="item product"> <strong>Product details</strong> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <main id="maincontent" class="page-main">
+            <a id="contentarea" tabindex="-1"></a>
+            <div class="columns col1-layout">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+
+                            <div class="column main">
+                                <div class="product-info-main">
+                                    <div class="page-title-wrapper product">
+                                        <h2 class="page-title">
+                                            <span class="base" data-ui-id="page-title-wrapper" itemprop="name">@Model.NameEn</span>
+                                        </h2>
+                                    </div>
+                                    <div class="product-info-price">
+                                        <div class="product-reviews-summary" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+                                            <div class="rating-summary">
+                                                <span class="label">
+                                                    <span>Rating:</span>
+                                                </span>
+                                                <div class="rating-result" title="88%">
+                                                    <span style="width:88%">
+                                                        <span>
+                                                            <span itemprop="ratingValue">88</span>% of
+                                                            <span itemprop="bestRating">100</span>
+                                                        </span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="reviews-actions">
+                                                <a class="action view" href="http://magento2.flytheme.net/themes/sm_zumi/default/natural-organic-activated-coconut.html#reviews">
+                                                    <span itemprop="reviewCount">2</span>&nbsp;
+                                                    <span>Reviews</span>
+                                                </a>
+                                                <a class="action add" href="http://magento2.flytheme.net/themes/sm_zumi/default/natural-organic-activated-coconut.html#review-form">
+                                                    Add Your Review
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="price-box price-final_price" data-role="priceBox" data-product-id="2071" data-price-box="product-id-2071">
+                                            <span class="price-container price-final_price&#x20;tax&#x20;weee" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                                <span id="product-price-2071" data-price-amount="@Model.FromPrice" data-price-type="finalPrice" class="price-wrapper ">
+                                                    <span class="price">@Model.FromPrice $</span>
+                                                </span>
+                                                <meta itemprop="price" content="@Model.FromPrice" />
+                                                <meta itemprop="priceCurrency" content="USD" />
+                                            </span>
+                                        </div>
+                                        <div class="product-info-stock-sku">
+                                            <div class="stock available" title="Availability"><span>@Model.productstatus</span></div>
+                                            <div class="product attribute sku">
+                                                <strong class="type">SKU</strong>
+                                                <div class="value" itemprop="sku">@Model.Code</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="product attribute overview">
+                                        <div class="value" itemprop="description"><p><span>@Model.DescriptionEn</span></p></div>
+                                    </div>
+                                    <div class="product-add-form">
+                                        <form data-product-sku="ZM-000017" action="http://magento2.flytheme.net/themes/sm_zumi/default/checkout/cart/add/uenc/aHR0cDovL21hZ2VudG8yLmZseXRoZW1lLm5ldC90aGVtZXMvc21fenVtaS9kZWZhdWx0L25hdHVyYWwtb3JnYW5pYy1hY3RpdmF0ZWQtY29jb251dC5odG1s/product/2071/" method="post" id="product_addtocart_form" enctype="multipart/form-data">
+                                            <input type="hidden" name="product" value="2071" />
+                                            <input type="hidden" name="selected_configurable_option" value="" />
+                                            <input type="hidden" name="related_product" id="related-products-field" value="" /><input type="hidden" name="item" value="2071" /><input name="form_key" type="hidden" value="2X8ZrwAUSm0zmhri" />        <div class="product-options-wrapper" id="product-options-wrapper" data-hasrequired="&#x2A;&#x20;Required&#x20;Fields">
+                                                <div class="fieldset" tabindex="0">
+
+                                                    <div class="field required">
+                                                        <div class="control">
+
+                                                            <label class="label" for="select_273"><span>Size</span></label>
+                                                            @Html.DropDownListFor(model => model.Sizes, (IEnumerable<SelectListItem>)ViewBag.Sizes, new { @class = "required product-custom-option admin__control-select" })
+
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="product-options-bottom">
+                                                <div class="box-tocart">
+                                                    <div class="fieldset">
+                                                        <div class="field qty">
+                                                            <label class="label" for="qty">
+                                                                <span>Qty</span>
+                                                            </label>
+                                                            <div class="control control-qty-cart">
+                                                                <input type="number" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="qty-default input-text qty" data-validate="{&quot;required-number&quot;:true,&quot;validate-item-quantity&quot;:{&quot;minAllowed&quot;:1,&quot;maxAllowed&quot;:10000}}" />
+                                                                <div class="control-qty">
+                                                                    <span class="quantity-controls quantity-plus"></span>
+                                                                    <span class="quantity-controls quantity-minus"></span>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="actions">
+                                                            <button type="submit" title="Add to Cart" class="action primary tocart" id="product-addtocart-button">
+                                                                <span>Add to Cart</span>
+                                                            </button>
+                                                            <div id="instant-purchase" data-bind="scope:'instant-purchase'"><!-- ko template: getTemplate() --><!-- /ko --></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                    </div>
+                                    @*<script>
+                                        $(document).ready(function () {
+                                              });</script>*@
+                                    <div class="product-social-links">
+                                        <div class="product-addto-links" data-role="add-to-links">
+                                            <a title="Add to Wish List" href="#" class="action towishlist" data-post='{"action":"http:\/\/magento2.flytheme.net\/themes\/sm_zumi\/default\/wishlist\/index\/add\/","data":{"product":2071,"uenc":"aHR0cDovL21hZ2VudG8yLmZseXRoZW1lLm5ldC90aGVtZXMvc21fenVtaS9uYXR1cmFsLW9yZ2FuaWMtYWN0aXZhdGVkLWNvY29udXQuaHRtbA,,"}}' data-action="add-to-wishlist">
+                                                <span>Add to Wish List</span>
+                                            </a>
+                                            <a title="Add to Compare" href="#" data-post='{"action":"http:\/\/magento2.flytheme.net\/themes\/sm_zumi\/default\/catalog\/product_compare\/add\/","data":{"product":"2071","uenc":"aHR0cDovL21hZ2VudG8yLmZseXRoZW1lLm5ldC90aGVtZXMvc21fenVtaS9uYXR1cmFsLW9yZ2FuaWMtYWN0aXZhdGVkLWNvY29udXQuaHRtbA,,"}}' data-role="add-to-links" class="action tocompare">
+                                                <span>Add to Compare</span>
+                                            </a>
+                                        </div>
+
+                                    </div>
+                                    <div id="addthis_wrap">
+                                        <div class="addthis_toolbox addthis_default_style ">
+                                            <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+                                            <iframe allowtransparency="true" frameborder="0" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.html" style="width:95px; height:20px; float:left;"></iframe><a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
+                                            <a class="addthis_counter addthis_pill_style"></a>
+                                        </div>
+
+                                        <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-529be2200cc72db5"></script>
+                                    </div>
+                                </div>
+
+                                <!--Gallerie -->
+                                <div id="Images_div">
+                                </div>
+                                <div id="mainImages_div">
+                                    <div id="carousel" class="carousel slide" data-ride="carousel">
+                                    </div>
+                                </div>
+
+                                <div class="product media">
+                                    <a id="gallery-prev-area" tabindex="-1"></a>
+                                    <div class="action-skip-wrapper">
+                                        <a class="action skip gallery-next-area" href="#gallery-next-area">
+                                            <span> Skip to the end of the images gallery</span>
+                                        </a>
+                                    </div>
+                                    @*@{
+                                            Html.RenderPartial("_Images", Model);
+                                        }*@
+
+
+                                    <div class="action-skip-wrapper">
+                                        <a class="action skip gallery-prev-area" href="#gallery-prev-area">
+                                            <span> Skip to the beginning of the images gallery</span>
+                                        </a>
+                                    </div>
+                                    <a id="gallery-next-area" tabindex="-1"></a>
+                                </div>
+                                <div class="product info detailed">
+                                    <div class="product data items default-style" data-mage-init='{"tabs":{"openedState":"active"}}'>
+                                        <ul class="resp-tabs-list">
+                                            <li class="data item title" aria-labeledby="tab-label-description-title" data-role="collapsible" id="description" data-tab="description">
+                                                <a class="data switch" tabindex="-1" data-toggle="switch" href="#description" id="tab-label-description-title">Details</a>
+                                            </li>
+                                            <li class="data item title" aria-labeledby="tab-label-additional-title" data-role="collapsible" id="additional">
+                                                <a class="data switch" tabindex="-1" data-toggle="switch" href="#additional" id="tab-label-additional-title">More Information</a>
+                                            </li>
+                                            <li class="data item title" aria-labeledby="tab-label-reviews-title" data-role="collapsible" id="reviews">
+                                                <a class="data switch" tabindex="-1" data-toggle="switch" href="#reviews" id="tab-label-reviews-title">Reviews <span class="counter">2</span></a>
+                                            </li>
+                                        </ul>
+                                        <div class="resp-tabs-container">
+                                            <div class="data item content resp-tab-content current" id="description" data-role="content">
+                                                <div class="product attribute description">
+                                                    <div class="value">
+                                                        <p style="color:#222;"><strong><i class="fa fa-flag"></i> LET'S SEE WHAT CHEF DEE GOT THAT THEY DON'T WANT US TO EAT</strong></p>
+                                                        <p>Lorem Khaled Ipsum is a major key to success. Eliptical talk. The key to more success is to get a massage once a week, very important, major key, cloth talk. Mogul talk. Cloth talk. I’m giving you cloth talk, cloth. Special cloth alert, cut from a special cloth. In life you have to take the trash out, if you have trash in your life, take it out, throw it away, get rid of it, major key. Surround yourself with angels. The key to more success is to have a lot of pillows. Life is what you make it, so let’s make it.</p>
+                                                        <p>They key is to have every key, the key to open every door. We don’t see them, we will never see them. To be successful you’ve got to work hard, to make history, simple, you’ve got to make it. They never said winning was easy. Some people can’t handle success, I can. I’m giving you cloth talk, cloth. Special cloth alert, cut from a special cloth. How’s business? Boomin. Egg whites, turkey sausage, wheat toast, water. Of course they don’t want us to eat our breakfast, so we are going to enjoy our break..</p>
+                                                        <p>Lorem khaled ipsum is a major key to success. It’s on you how you want to live your life. Everyone has a choice. I pick my choice, squeaky clean. Always remember in the jungle there’s a lot of they in there, after you overcome they, you will make it to paradise. Wraith talk. Surround yourself with angels, positive energy, beautiful people, beautiful souls, clean heart, angel. They don’t want us to eat. Life is what you make it, so let’s make it. The key is to enjoy life, because they don’t want you to enjoy life. I promise you, they don’t want you to jetski, they don’t want you to smile.</p>
+                                                        <p style="color:#e01222;margin:30px;"><i class="fa fa-quote-left"></i> Lorem Khaled Ipsum is a major key to success. Eliptical talk. The key to more success is to get a massage once a week, very important, major key, cloth talk... Mogul talk. Cloth talk. I’m giving you cloth talk, cloth. Special cloth alert, cut from a special cloth. In life you have to take the trash out <i class="fa fa-quote-right"></i></p>
+                                                        <p>Lorem Khaled Ipsum is a major key to success. Eliptical talk. The key to more success is to get a massage once a week, very important, major key, cloth talk. Mogul talk. Cloth talk. I’m giving you cloth talk, cloth. Special cloth alert, cut from a special cloth. In life you have to take the trash out, if you have trash in your life, take it out, throw it away, get rid of it, major key. Surround yourself with angels. The key to more success is to have a lot of pillows. Life is what you make it, so let’s make it.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="data item content resp-tab-content" id="additional" data-role="content">
+                                                <div class="additional-attributes-wrapper table-wrapper">
+                                                    <table class="data table additional-attributes" id="product-attribute-specs-table">
+                                                        <caption class="table-caption">More Information</caption>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th class="col label" scope="row">Manufacturer</th>
+                                                                <td class="col data" data-th="Manufacturer">Collins & Hayes</td>
+                                                            </tr>
+                                                            <tr><th class="col label" scope="row">Material</th><td class="col data" data-th="Material">Polyester, Spandex</td></tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="data item content resp-tab-content" id="reviews" data-role="content">
+                                                <div id="product-review-container" data-role="product-review"></div>
+                                                <div class="block review-add">
+                                                    <div class="block-title"><strong>Write Your Own Review</strong></div>
+                                                    <div class="block-content" id="contentBlockReviewForm">
+
+
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                @*<script data-role="msrp-popup-template" type="text/x-magento-template">*@
+                                <div id="map-popup-click-for-price" class="map-popup">
+                                    <div class="popup-header">
+                                        <strong class="title" id="map-popup-heading-price"></strong>
+                                    </div>
+                                    <div class="popup-content">
+                                        <div class="map-info-price" id="map-popup-content">
+                                            <div class="price-box">
+                                                <div class="map-msrp" id="map-popup-msrp-box">
+                                                    <span class="label">Price</span>
+                                                    <span class="old-price map-old-price" id="map-popup-msrp">
+                                                        <span class="price"></span>
+                                                    </span>
+                                                </div>
+                                                <div class="map-price" id="map-popup-price-box">
+                                                    <span class="label">Actual Price</span>
+                                                    <span id="map-popup-price" class="actual-price"></span>
+                                                </div>
+                                            </div>
+                                            <form action="" method="POST" class="map-form-addtocart">
+                                                <input type="hidden" name="product" class="product_id" value="" />
+                                                <button type="button"
+                                                        title="Add to Cart"
+                                                        class="action tocart primary" id="addtocart">
+                                                    <span>Add to Cart</span>
+                                                </button>
+                                                <div class="additional-addtocart-box">
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="map-text" id="map-popup-text">
+                                            Our price is lower than the manufacturer&#039;s &quot;minimum advertised price.&quot; As a result, we cannot show you the price in catalog or the product page. <br><br> You have no obligation to purchase the product once you know the price. You can simply remove the item from your cart.
+                                        </div>
+                                    </div>
+                                </div>
+                                @*</script>*@
+                                <script data-role="msrp-info-template" type="text/x-magento-template">
+                                    <div id="map-popup-what-this" class="map-popup">
+                                        <div class="popup-header">
+                                            <strong class="title" id="map-popup-heading-what-this"></strong>
+                                        </div>
+                                        <div class="popup-content">
+                                            <div class="map-help-text" id="map-popup-text-what-this">
+                                                Our price is lower than the manufacturer&#039;s &quot;minimum advertised price.&quot; As a result, we cannot show you the price in catalog or the product page. <br><br> You have no obligation to purchase the product once you know the price. You can simply remove the item from your cart.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!--<div class="page-bottom">
+            <div class="container">
+                <div class="related-upsell-wrapper block block-detail upsell">
+                    <div class="detail-title"><span id="block-upsell-heading" role="heading" aria-level="2">Most Viewed Products</span></div>
+                    <div class="block-content content" aria-labelledby="block-upsell-heading">
+                        <div class="grid products-grid products-upsell">
+                            <div class="grid-product-type products list items product-items slider-products" id="mostviewedproductspartial">-->
+        <!--Here loading most viewed products partial-->
+        <!--</div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>-->
+    </div>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+    <script src="~/plugins/owl.carousel.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.quantity-plus').click(function () {
+                $('.qty-default').val(Number($('.qty-default').val()) + 1);
+            });
+
+            $('.quantity-minus').click(function () {
+                var value = Number($('.qty-default').val()) - 1;
+                if (value > 0) {
+                    $('.qty-default').val(value);
+                }
+
+            });
+
+            var __qty = $('#qty').val();
+            $.ajax({
+                    url: "@Url.Action("Cart","Checkout")",
+                    data: { productid: product_id, qty:_qty},
+                    error: function (response) {
+                        alert("Sorry...");
+                },
+                    success: function (result) {
+                        if (attribute == 'glyphicon glyphicon-heart') {
+                                $('#_favourite').removeClass('glyphicon-heart').addClass('glyphicon-heart-empty');
+                            }
+                            else {
+                                $('#_favourite').removeClass('glyphicon-heart-empty').addClass('glyphicon-heart');
+                            }
+                    }
+                });
+
+        });
+
+    </script>
+    @*<script>
+            $(document).ready(function () {
+                $(".resp-tabs-list li#description").on("click", function () {
+                    $('.resp-tabs-list li').removeClass('current').filter('[id= description]').addClass('current');
+                    $('.resp-tabs-container .resp-tab-content').removeClass('current').filter('[id= description]').addClass('current');
+                });
+               $(".resp-tabs-list li#additional").on("click", function () {
+                    $('.resp-tabs-list li').removeClass('current').filter('[id= additional]').addClass('current');
+                    $('.resp-tabs-container .resp-tab-content').removeClass('current').filter('[id= additional]').addClass('current');
+
+                });
+               $(".resp-tabs-list li#reviews").on("click", function () {
+                    $('.resp-tabs-list li').removeClass('current').filter('[id= reviews]').addClass('current');
+                    $('.resp-tabs-container .resp-tab-content').removeClass('current').filter('[id= reviews]').addClass('current');
+                });
+
+            });
+
+        </script>*@
+    @* <script>
+
+        $(document).ready(function () {
+        var product_id = '@Model.ID';
+        var favarite = '@ViewBag.Favourite';
+        if (favarite == 'True')
+        {
+            $('#_favourite').removeClass('glyphicon-heart-empty').addClass('glyphicon-heart');
+        }
+        if (@ViewBag.Rate != 0) {
+            var number = @ViewBag.Rate;
+            for (var i = 0; i <= number-1; i++) {
+                $('#_Ratingid_' + i).removeClass('glyphicon-star-empty').addClass('glyphicon-star');
+            }
+            for (var i = number + 1; i < 5; i++) {
+                $('#_Ratingid_' + i).removeClass('glyphicon-star').addClass('glyphicon-star-empty');
+            }
+        }
+        $('[title="Rating"]').mousemove(function () {
+            $(this).css('cursor', 'pointer')
+        }).click(function ()
+        {
+            var _index = $(this).index();
+                            $.ajax({
+                        url: "@Url.Action("Rating")",
+                        data: { number: _index+1, productid: product_id},
+                        error: function (response) {
+                            alert("Sorry...");
+                    },
+                    success: function (result) {
+                            if (result > 0)
+                            {
+                                for (var i = 0; i <=_index; i++) {
+                                    $('#_Ratingid_' + i).removeClass('glyphicon-star-empty').addClass('glyphicon-star');
+                                }
+                                for (var i = _index + 1; i < 5; i++) {
+                                    $('#_Ratingid_' + i).removeClass('glyphicon-star').addClass('glyphicon-star-empty');
+                                }
+                            }
+                        }
+                    });
+            });*@
+    @*$('#_favourite').click(function () {
+                    var attribute = $(this).attr('class');
+                    var obj = $(this);
+                    var _fav = false;
+                    if (attribute == 'glyphicon glyphicon-heart-empty') {
+                        _fav = true;
+                    }
+                    $.ajax({
+                                url: "@Url.Action("Favourite")",
+                                data: { productid: product_id, favourite:_fav},
+                                error: function (response) {
+                                    alert("Sorry...");
+                            },
+                                success: function (result) {
+                                    if (attribute == 'glyphicon glyphicon-heart') {
+                                            $('#_favourite').removeClass('glyphicon-heart').addClass('glyphicon-heart-empty');
+                                        }
+                                        else {
+                                            $('#_favourite').removeClass('glyphicon-heart-empty').addClass('glyphicon-heart');
+                                        }
+                                }
+                            });
+                }).mousemove(function () {
+                    $(this).css('cursor', 'pointer');
+                    });
+
+            });
+        </script>*@
+
+    <script>
+        $(document).ready(function () {
+
+            // 'use strict';
+            @*$.ajax({
+            url: '@Url.Action("_MostViewedProducts","Products")', // La ressource ciblée
+            //type: 'GET', // Le type de la requête HTTP.
+
+         success: function (response) {
+             //alert("successs");
+             $('#mostviewedproductspartial').html(response);
+         }, error: function () {
+
+         }
+
+            });*@
+
+
+
+            //var owl_upsell = $(".upsell .slider-products");
+            //owl_upsell.owlCarousel({
+
+            //    responsive: {
+            //        0: {
+            //            items: 1
+            //        },
+            //        480: {
+            //            items: 2
+            //        },
+            //        768: {
+            //            items: 3
+            //        },
+            //        992: {
+            //            items: 3
+            //        },
+            //        1200: {
+            //            items: 4
+            //        }
+            //    },
+
+            //    autoplay: false,
+            //    loop: false,
+            //    nav: true,
+            //    dots: false,
+            //    autoplaySpeed: 500,
+            //    navSpeed: 500,
+            //    dotsSpeed: 500,
+            //    autoplayHoverPause: true,
+            //    margin: 20,
+
+            //});
+
+            //var dataPriceBoxSelector = '[data-role=priceBox]',
+            //    dataProductIdSelector = '[data-product-id=2071]',
+            //    priceBoxes = $(dataPriceBoxSelector + dataProductIdSelector);
+
+            //priceBoxes = priceBoxes.filter(function (index, elem) {
+            //    return !$(elem).find('.price-from').length;
+            //});
+
+            //priceBoxes.priceBox({ 'priceConfig': { "productId": 2071, "priceFormat": { "pattern": "$%s", "precision": 2, "requiredPrecision": 2, "decimalSymbol": ".", "groupSymbol": ",", "groupLength": 3, "integerRequired": false }, "prices": { "oldPrice": { "amount": 4.1, "adjustments": [] }, "basePrice": { "amount": 4.1, "adjustments": [] }, "finalPrice": { "amount": 4.1, "adjustments": [] } }, "idSuffix": "_clone", "tierPrices": [], "calculationAlgorithm": "TOTAL_BASE_CALCULATION" } });
+
+        });
+
+
+    </script>
+
+</body>
+</html>

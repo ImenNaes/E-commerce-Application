@@ -1,0 +1,235 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!doctype html>
+<html lang="en">
+<head>
+ 
+</head>
+<body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "http://magento2.flytheme.net/themes/sm_zumi/pub/static/frontend/Sm/zumi/en_US/images/loader-2.gif"}}' class="header-1-style home-1-style footer-1-style layout-full_width  checkout-cart-index page-layout-1column">
+    <script>
+        require.config({
+            deps: [
+                'jquery',
+                'mage/translate',
+                'jquery/jquery-storageapi'
+            ],
+            callback: function ($) {
+                'use strict';
+
+                var dependencies = [],
+                    versionObj;
+
+                $.initNamespaceStorage('mage-translation-storage');
+                $.initNamespaceStorage('mage-translation-file-version');
+                versionObj = $.localStorage.get('mage-translation-file-version');
+
+                if (versionObj.version !== '1b6441cb26de2c1637701a0021703de5003d719b') {
+                    dependencies.push(
+                        'text!js-translation.json'
+                    );
+
+                }
+
+                require.config({
+                    deps: dependencies,
+                    callback: function (string) {
+                        if (typeof string === 'string') {
+                            $.mage.translate.add(JSON.parse(string));
+                            $.localStorage.set('mage-translation-storage', string);
+                            $.localStorage.set(
+                                'mage-translation-file-version',
+                                {
+                                    version: '1b6441cb26de2c1637701a0021703de5003d719b'
+                                }
+                            );
+                        } else {
+                            $.mage.translate.add($.localStorage.get('mage-translation-storage'));
+                        }
+                    }
+                });
+            }
+        });</script>
+    <script type="text/x-magento-init">
+        {
+        "*": {
+        "mage/cookies": {
+        "expires": null,
+        "path": "\u002Fthemes\u002Fsm_zumi",
+        "domain": ".magento2.flytheme.net",
+        "secure": false,
+        "lifetime": "3600"
+        }
+        }
+        }
+    </script>  <noscript><div class="message global noscript"><div class="content"><p><strong>JavaScript seems to be disabled in your browser.</strong> <span>For the best experience on our site, be sure to turn on Javascript in your browser.</span></p></div></div></noscript>
+    <div class="page-wrapper">
+          
+        <script type="text/javascript">
+            require([
+                'jquery',
+                'mage/cookies',
+                'jqueryfancyboxpack'
+            ], function ($) {
+                var check_cookie = jQuery.cookie('newsletter_popup');
+                if (check_cookie == null || check_cookie == 'shown') {
+                    popupNewsletter();
+                }
+                jQuery('#newsletter-popup .subscribe-bottom input').on('click', function () {
+                    if (jQuery(this).parent().find('input:checked').length) {
+                        var check_cookie = jQuery.cookie('newsletter_popup');
+                        if (check_cookie == null || check_cookie == 'shown') {
+                            jQuery.cookie('newsletter_popup', 'dontshowitagain');
+                        }
+                        else {
+                            jQuery.cookie('newsletter_popup', 'shown');
+                            popupNewsletter();
+                        }
+                    } else {
+                        jQuery.cookie('newsletter_popup', 'shown');
+                    }
+                });
+            });
+
+            function popupNewsletter() {
+                jQuery(document).ready(function ($) {
+                    $.fancybox.open('#newsletter-popup');
+                });
+            };</script> <div class="header-top-wrapper">  <div class="page-title-wrapper"><h2 class="page-title"><span class="base" data-ui-id="page-title-wrapper">Shopping Cart</span></h2></div> </div><main id="maincontent" class="page-main">
+            <a id="contentarea" tabindex="-1"></a><div class="columns col1-layout">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="page messages">
+                                <div data-placeholder="messages"></div> <div data-bind="scope: 'messages'"><!-- ko if: cookieMessages && cookieMessages.length > 0 --><div role="alert" data-bind="foreach: { data: cookieMessages, as: 'message' }" class="messages"><div data-bind="attr: { class: 'message-' + message.type + ' ' + message.type + ' message', 'data-ui-id': 'message-' + message.type }"><div data-bind="html: message.text"></div></div></div><!-- /ko --><!-- ko if: messages().messages && messages().messages.length > 0 --><div role="alert" data-bind="foreach: { data: messages().messages, as: 'message' }" class="messages"><div data-bind="attr: { class: 'message-' + message.type + ' ' + message.type + ' message', 'data-ui-id': 'message-' + message.type }"><div data-bind="html: message.text"></div></div></div><!-- /ko --></div>
+                                <script type="text/x-magento-init">
+                                    {
+                                    "*": {
+                                    "Magento_Ui/js/core/app": {
+                                    "components": {
+                                    "messages": {
+                                    "component": "Magento_Theme/js/view/messages"
+                                    }
+                                    }
+                                    }
+                                    }
+                                    }
+                                </script>
+                            </div><div class="column main">
+                                <input name="form_key" type="hidden" value="2X8ZrwAUSm0zmhri" /> <div id="authenticationPopup" data-bind="scope:'authenticationPopup'" style="display: none;">
+                                    <script>
+                                        window.authenticationPopup = { "autocomplete": "off", "customerRegisterUrl": "http:\/\/magento2.flytheme.net\/themes\/sm_zumi\/default\/customer\/account\/create\/", "customerForgotPasswordUrl": "http:\/\/magento2.flytheme.net\/themes\/sm_zumi\/default\/customer\/account\/forgotpassword\/", "baseUrl": "http:\/\/magento2.flytheme.net\/themes\/sm_zumi\/default\/" };</script><!-- ko template: getTemplate() --><!-- /ko -->
+                                    <script type="text/x-magento-init">
+                                        {
+                                        "#authenticationPopup": {
+                                        "Magento_Ui/js/core/app": {"components":{"authenticationPopup":{"component":"Magento_Customer\/js\/view\/authentication-popup","children":{"messages":{"component":"Magento_Ui\/js\/view\/messages","displayArea":"messages"},"captcha":{"component":"Magento_Captcha\/js\/view\/checkout\/loginCaptcha","displayArea":"additional-login-form-fields","formId":"user_login","configSource":"checkout"},"amazon-button":{"component":"Amazon_Login\/js\/view\/login-button-wrapper","sortOrder":"0","displayArea":"additional-login-form-fields","config":{"tooltip":"Securely login to our website using your existing Amazon details.","componentDisabled":true}}}}}}            },
+                                        "*": {
+                                        "Magento_Ui/js/block-loader": "http\u003A\u002F\u002Fmagento2.flytheme.net\u002Fthemes\u002Fsm_zumi\u002Fpub\u002Fstatic\u002Ffrontend\u002FSm\u002Fzumi\u002Fen_US\u002Fimages\u002Floader\u002D1.gif"
+                                        }
+                                        }
+                                    </script>
+                                </div>
+                                <script type="text/x-magento-init">
+                                    {"*":{"Magento_Customer\/js\/section-config":{"sections":{"stores\/store\/switch":"*","stores\/store\/switchrequest":"*","directory\/currency\/switch":"*","*":["messages"],"customer\/account\/logout":["recently_viewed_product","recently_compared_product"],"customer\/account\/loginpost":"*","customer\/account\/createpost":"*","customer\/account\/editpost":"*","customer\/ajax\/login":["checkout-data","cart","captcha"],"catalog\/product_compare\/add":["compare-products"],"catalog\/product_compare\/remove":["compare-products"],"catalog\/product_compare\/clear":["compare-products"],"sales\/guest\/reorder":["cart"],"sales\/order\/reorder":["cart"],"checkout\/cart\/add":["cart"],"checkout\/cart\/delete":["cart"],"checkout\/cart\/updatepost":["cart"],"checkout\/cart\/updateitemoptions":["cart"],"checkout\/cart\/couponpost":["cart"],"checkout\/cart\/estimatepost":["cart"],"checkout\/cart\/estimateupdatepost":["cart"],"checkout\/onepage\/saveorder":["cart","checkout-data","last-ordered-items","checkout-fields"],"checkout\/sidebar\/removeitem":["cart"],"checkout\/sidebar\/updateitemqty":["cart"],"rest\/*\/v1\/carts\/*\/payment-information":["cart","checkout-data","last-ordered-items","instant-purchase"],"rest\/*\/v1\/guest-carts\/*\/payment-information":["cart"],"rest\/*\/v1\/guest-carts\/*\/selected-payment-method":["cart","checkout-data"],"rest\/*\/v1\/carts\/*\/selected-payment-method":["cart","checkout-data","instant-purchase"],"customer\/address\/*":["instant-purchase"],"customer\/account\/*":["instant-purchase"],"vault\/cards\/deleteaction":["instant-purchase"],"multishipping\/checkout\/overviewpost":["cart"],"authorizenet\/directpost_payment\/place":["cart","checkout-data"],"paypal\/express\/placeorder":["cart","checkout-data"],"paypal\/payflowexpress\/placeorder":["cart","checkout-data"],"paypal\/express\/onauthorization":["cart","checkout-data"],"persistent\/index\/unsetcookie":["persistent"],"review\/product\/post":["review"],"braintree\/paypal\/placeorder":["cart","checkout-data"],"wishlist\/index\/add":["wishlist"],"wishlist\/index\/remove":["wishlist"],"wishlist\/index\/updateitemoptions":["wishlist"],"wishlist\/index\/update":["wishlist"],"wishlist\/index\/cart":["wishlist","cart"],"wishlist\/index\/fromcart":["wishlist","cart"],"wishlist\/index\/allcart":["wishlist","cart"],"wishlist\/shared\/allcart":["wishlist","cart"],"wishlist\/shared\/cart":["cart"],"cartquickpro\/cart\/add":["cart"],"cartquickpro\/cart\/delete":["cart"],"cartquickpro\/sidebar\/removeitem":["cart"],"cartquickpro\/sidebar\/updateitemqty":["cart"],"cartquickpro\/cart\/updateitemoptions":["cart"],"cartquickpro\/product_compare\/add":["compare-products"],"cartquickpro\/product_compare\/remove":["compare-products"],"cartquickpro\/product_compare\/clear":["compare-products"],"cartquickpro\/wishlist_index\/add":["wishlist"],"cartquickpro\/wishlist_index\/remove":["wishlist"],"cartquickpro\/wishlist_index\/updateitemoptions":["wishlist"],"cartquickpro\/wishlist_index\/update":["wishlist"],"cartquickpro\/wishlist_index\/cart":["wishlist","cart"],"cartquickpro\/wishlist_index\/fromcart":["cart","checkout-data","wishlist"],"cartquickpro\/wishlist_index\/allcart":["wishlist","cart"]},"clientSideSections":["checkout-data","cart-data"],"baseUrls":["http:\/\/magento2.flytheme.net\/themes\/sm_zumi\/default\/"]}}}
+                                </script>
+                                <script type="text/x-magento-init">
+                                    {"*":{"Magento_Customer\/js\/customer-data":{"sectionLoadUrl":"http:\/\/magento2.flytheme.net\/themes\/sm_zumi\/default\/customer\/section\/load\/","expirableSectionLifetime":60,"expirableSectionNames":["cart","persistent"],"cookieLifeTime":"3600","updateSessionUrl":"http:\/\/magento2.flytheme.net\/themes\/sm_zumi\/default\/customer\/account\/updateSession\/"}}}
+                                </script>
+                                <script type="text/x-magento-init">
+                                    {"*":{"Magento_Customer\/js\/invalidation-processor":{"invalidationRules":{"website-rule":{"Magento_Customer\/js\/invalidation-rules\/website-rule":{"scopeConfig":{"websiteId":1}}}}}}}
+                                </script>
+                                <script type="text/x-magento-init">
+                                    {
+                                    "body": {
+                                    "pageCache": {"url":"http:\/\/magento2.flytheme.net\/themes\/sm_zumi\/default\/page_cache\/block\/render\/","handles":["default","checkout_cart_index"],"originalRequest":{"route":"checkout","controller":"cart","action":"index","uri":"\/themes\/sm_zumi\/default\/checkout\/cart\/"},"versionCookieName":"private_content_version"}        }
+                                    }
+                                </script>
+                                <script data-role="msrp-popup-template" type="text/x-magento-template">
+                                    <div id="map-popup-click-for-price" class="map-popup">
+                                        <div class="popup-header">
+                                            <strong class="title" id="map-popup-heading-price"></strong>
+                                        </div>
+                                        <div class="popup-content">
+                                            <div class="map-info-price" id="map-popup-content">
+                                                <div class="price-box">
+                                                    <div class="map-msrp" id="map-popup-msrp-box">
+                                                        <span class="label">Price</span>
+                                                        <span class="old-price map-old-price" id="map-popup-msrp">
+                                                            <span class="price"></span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="map-price" id="map-popup-price-box">
+                                                        <span class="label">Actual Price</span>
+                                                        <span id="map-popup-price" class="actual-price"></span>
+                                                    </div>
+                                                </div>
+                                                <form action="" method="POST" class="map-form-addtocart">
+                                                    <input type="hidden" name="product" class="product_id" value="" />
+                                                    <button type="button"
+                                                            title="Add to Cart"
+                                                            class="action tocart primary">
+                                                        <span>Add to Cart</span>
+                                                    </button>
+                                                    <div class="additional-addtocart-box">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="map-text" id="map-popup-text">
+                                                Our price is lower than the manufacturer&#039;s &quot;minimum advertised price.&quot; As a result, we cannot show you the price in catalog or the product page. <br><br> You have no obligation to purchase the product once you know the price. You can simply remove the item from your cart.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </script>
+                                <script data-role="msrp-info-template" type="text/x-magento-template">
+                                    <div id="map-popup-what-this" class="map-popup">
+                                        <div class="popup-header">
+                                            <strong class="title" id="map-popup-heading-what-this"></strong>
+                                        </div>
+                                        <div class="popup-content">
+                                            <div class="map-help-text" id="map-popup-text-what-this">
+                                                Our price is lower than the manufacturer&#039;s &quot;minimum advertised price.&quot; As a result, we cannot show you the price in catalog or the product page. <br><br> You have no obligation to purchase the product once you know the price. You can simply remove the item from your cart.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </script> 
+                            <div class="cart-empty"> <p>You have no items in your shopping cart.</p><p>Click
+                                <a href="http://magento2.flytheme.net/themes/sm_zumi/default/">here</a> 
+                                to continue shopping.</p>
+                            </div>
+                                
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    
+
+        
+        <script type="text/javascript">
+            require([
+                'jquery',
+                'quickView',
+                'domReady!'
+            ], function ($, cartQuickView) {
+                var quickViewCf = {
+                    isQuickView: true,
+                    isAjaxCart: true,
+                    product_container: '.products-grid .item-inner,.products-list .item-inner,.products-grid .item',
+                    button_container: '.box-image .button-action,.box-image-list,.action-bottom',
+                    label_button: 'Quick View',
+                    base_url: 'http://magento2.flytheme.net/themes/sm_zumi/default/'
+                }
+                $(quickViewCf.product_container).cartQuickView(quickViewCf);
+                $(document).on("afterAjaxProductsLoaded", function (event) {
+                    $(quickViewCf.product_container).cartQuickView(quickViewCf);
+                });
+            });</script>
+        <div id="smcqp-container" style="display:none;"><div data-role="loader" class="loading-mask"><div class="loader"><img src="http://magento2.flytheme.net/themes/sm_zumi/pub/static/frontend/Sm/zumi/en_US/images/loader-1.gif" alt="Loading..."></div></div><div id="smcqp-contents"></div><div id="smcqp-report" style="display:none;"><div class="smcqp-messages"></div><div class="smcqp-actions"><a class="smcqp-continue spcqp-count" data-count="5" href="#" title="Continue">Continue</a> <a class="smcqp-btn smcqp-view-cart " href="http://magento2.flytheme.net/themes/sm_zumi/default/checkout/cart/" title="View Cart">View Cart</a> <a class="smcqp-btn smcqp-view-compare " href="http://magento2.flytheme.net/themes/sm_zumi/default/catalog/product_compare/index/" title="Compare Products">Compare Products</a> <a class="smcqp-btn smcqp-view-wishlist " href="http://magento2.flytheme.net/themes/sm_zumi/default/wishlist/" title="My Wishlist">My Wishlist</a></div></div></div> <div data-role="loader" class="loading-mask-shopby" style="display:none"><div class="loader"><img src="http://magento2.flytheme.net/themes/sm_zumi/pub/static/frontend/Sm/zumi/en_US/images/loader-1.gif" alt="Loading..."></div></div>
+    </div>
+</body>
+</html>
+

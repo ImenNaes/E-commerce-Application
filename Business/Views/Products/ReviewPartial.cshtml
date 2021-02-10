@@ -1,0 +1,128 @@
+﻿@model BLL.Entities.BoxReviews
+
+@using (Html.BeginForm("ReviewPartial", "Products", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @*<form action="http://magento2.flytheme.net/themes/sm_zumi/default/review/product/post/id/2071/" class="review-form" method="post" id="review-form" data-role="product-review-form" data-bind="scope: 'review-form'">*@
+    <input name="form_key" type="hidden" value="2X8ZrwAUSm0zmhri" />
+    <fieldset class="fieldset review-fieldset" data-hasrequired="&#x2A;&#x20;Required&#x20;Fields">
+        <legend class="legend review-legend"><span>You&#039;re reviewing:</span><strong>Natural Organic Activated Coconut</strong></legend><br />
+        <span id="input-message-box"></span>
+        @*<fieldset class="field required review-field-ratings">
+            <legend class="label"><span>Your Rating</span></legend><br />
+            <div class="control">
+                <div class="nested" id="product-review-table">
+                    <div class="field choice review-field-rating">
+                        <label class="label" id="Quality_rating_label"><span>Quality</span></label>
+                        <div class="control review-control-vote">
+                            <input type="radio" name="ratings[1]" id="_Ratingid_0" value="1" class="radio" data-validate="{'rating-required':true}" aria-labelledby="Quality_rating_label Quality_1_label" />
+                            <label class="rating-1" for="Quality_1" title="Rating" id="Quality_1_label"><span>1 star</span></label>
+                            <input type="radio" name="ratings[1]" id="_Ratingid_1" value="2" class="radio" data-validate="{'rating-required':true}" aria-labelledby="Quality_rating_label Quality_2_label" />
+                            <label class="rating-2" for="Quality_2" title="Rating" id="Quality_2_label"><span>2 stars</span></label>
+                            <input type="radio" name="ratings[1]" id="_Ratingid_3" value="3" class="radio" data-validate="{'rating-required':true}" aria-labelledby="Quality_rating_label Quality_3_label" />
+                            <label class="rating-3" for="Quality_3" title="Rating" id="Quality_3_label"><span>3 stars</span></label>
+                            <input type="radio" name="ratings[1]" id="_Ratingid_4" value="4" class="radio" data-validate="{'rating-required':true}" aria-labelledby="Quality_rating_label Quality_4_label" />
+                            <label class="rating-4" for="Quality_4" title="Rating" id="Quality_4_label"><span>4 stars</span></label>
+                            <input type="radio" name="ratings[1]" id="_Ratingid_5" value="5" class="radio" data-validate="{'rating-required':true}" aria-labelledby="Quality_rating_label Quality_5_label" />
+                            <label class="rating-5" for="Quality_5" title="Rating" id="Quality_5_label"><span>5 stars</span></label>
+                        </div>
+                      
+                    </div>
+                </div>
+                <input type="hidden" name="validate_rating" class="validate-rating" value="" />
+            </div>
+        </fieldset>*@
+
+        @*<div class="field review-field-nickname required">
+            <label for="nickname_field" class="label"><span>Nickname</span></label>
+            <div class="control">
+                <input type="text" name="nickname" id="nickname_field" class="input-text" data-validate="{required:true}" data-bind="value: nickname()" />
+            </div>
+        </div>
+        <div class="field review-field-summary required">
+            <label for="summary_field" class="label"><span>Summary</span></label>
+            <div class="control"><input type="text" name="title" id="summary_field" class="input-text" data-validate="{required:true}" data-bind="value: review().title" /></div>
+        </div>
+        <div class="field review-field-text required">
+            <label for="review_field" class="label"><span>Review</span></label>
+            <div class="control">
+                <textarea name="detail" id="review_field" cols="5" rows="3" data-validate="{required:true}" data-bind="value: review().detail"></textarea>
+            </div>
+        </div>*@
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <input value="@ViewBag.productid" type="hidden" />
+
+        <div class="field review-field-nickname required">
+            @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="control">
+                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="field review-field-summary required">
+            @Html.LabelFor(model => model.Summary, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="control">
+                @Html.EditorFor(model => model.Summary, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Summary, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="field review-field-text required">
+            @Html.LabelFor(model => model.Review, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="control">
+                @Html.TextAreaFor(model => model.Review, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Review, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+    </fieldset>
+    <div class="actions-toolbar review-form-actions">
+        <div class="primary actions-primary">
+            <button type="submit" class="action submit primary" id="Clickbtnsave">
+                <span>Submit Review</span>
+            </button>
+        </div>
+    </div>
+
+}
+
+@*<script>
+    $(document).ready(function () {      
+        var product_id = '@ViewBag.productid';
+
+        if (@ViewBag.Rate != 0) {
+            var number = @ViewBag.Rate;
+            for (var i = 0; i <= number-1; i++) {
+                $('#_Ratingid_' + i).removeClass('glyphicon-star-empty').addClass('glyphicon-star');
+            }
+            for (var i = number + 1; i < 5; i++) {
+                $('#_Ratingid_' + i).removeClass('glyphicon-star').addClass('glyphicon-star-empty');
+            }
+        }
+        $('[title="Rating"]').mousemove(function () {
+            $(this).css('cursor', 'pointer')
+        }).click(function ()
+        {
+            var _index = $(this).index();
+                            $.ajax({
+                        url: "@Url.Action("Rating","Products")",
+                        data: { number: _index+1, productid: product_id},
+                        error: function (response) {
+                            alert("Sorry...");
+                    },
+                    success: function (result) {
+                            //if (result > 0)
+                            //{
+                                for (var i = 0; i <=_index; i++) {
+                                    $('#_Ratingid_' + i).removeClass('glyphicon-star-empty').addClass('glyphicon-star');
+                                }
+                                for (var i = _index + 1; i < 5; i++) {
+                                    $('#_Ratingid_' + i).removeClass('glyphicon-star').addClass('glyphicon-star-empty');
+                                }
+                           // }
+                        }
+                    });
+        });
+    });
+</script>*@

@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    //Layout = "~/Views/Shared/Layout_V2.cshtml";
+}
+@*@{
+        var Cartdb = new DAL.Repositories.CartsRepository();
+
+        string ai_Cart = string.Empty;
+        if (Request.Cookies["ai_Cart"] != null)
+        {
+            ai_Cart = Request.Cookies["ai_Cart"].Value;
+        }
+        else
+        {
+            ai_Cart = Guid.NewGuid().ToString();
+            Response.Cookies["ai_Cart"].Value = ai_Cart.ToString();
+            Response.Cookies["ai_Cart"].Expires = DateTime.Now.AddDays(1);
+        }
+        var cart = Cartdb.GetwithExpression(c => c.ai_Cart == ai_Cart).ToList();
+        Session["Cart"] = cart;
+        //Session["counterKey"] = cart.Where(c=>c.IsDeleted==false).Sum(c => c.Quantity);
+        Session["counterKey"] = cart.Sum(c => c.Quantity);
+        decimal totalprice = 0.00m;
+        foreach (var item in cart)
+        {
+            totalprice += decimal.Parse(item.Quantity.ToString()) * decimal.Parse(item.Price.ToString());
+
+        }
+        Session["counterKeyTotalPrice"] = totalprice;
+    }*@
+
+

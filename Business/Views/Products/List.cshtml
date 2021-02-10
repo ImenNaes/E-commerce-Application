@@ -1,0 +1,276 @@
+﻿@model Business.Controllers.ProductsController.FilterViewModel
+<!doctype html>
+<html lang="en">
+<head>
+</head>
+<body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "http://magento2.flytheme.net/themes/sm_zumi/pub/static/frontend/Sm/zumi/en_US/images/loader-2.gif"}}' class="page-with-filter header-2-style home-2-style footer-2-style layout-full_width  page-products categorypath-bundle-combo category-bundle-combo catalog-category-view page-layout-2columns-left">
+
+    <!-- BEGIN GTAG CART SCRIPT --> <!-- END GTAG CART SCRIPT -->
+    <div class="page-wrapper">
+        <div class="header-top-wrapper">  <div class="page-title-wrapper"><h2 class="page-title" id="page-title-heading" aria-labelledby="page-title-heading toolbar-amount"><span class="base" data-ui-id="page-title-wrapper">Bundle Combo</span></h2> </div>  <div class="breadcrumbs"><div class="container"><ul class="items"> <li class="item home"> <a href="http://magento2.flytheme.net/themes/sm_zumi/french/" title="Go to Home Page">Home</a> </li>  <li class="item category110"> <strong>Bundle Combo</strong> </li> </ul></div></div></div><main id="maincontent" class="page-main">
+            <a id="contentarea" tabindex="-1"></a><div class="columns col2-layout">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9 col-right-main">
+                            <div class="page messages">
+                                <div data-placeholder="messages"></div>
+                            <div data-bind="scope: 'messages'"><!-- ko if: cookieMessages && cookieMessages.length > 0 -->
+                                <div role="alert" data-bind="foreach: { data: cookieMessages, as: 'message' }" class="messages">
+                                <div data-bind="attr: { class: 'message-' + message.type + ' ' + message.type + ' message', 'data-ui-id': 'message-' + message.type }"><div data-bind="html: message.text"></div></div></div><!-- /ko --><!-- ko if: messages().messages && messages().messages.length > 0 --><div role="alert" data-bind="foreach: { data: messages().messages, as: 'message' }" class="messages"><div data-bind="attr: { class: 'message-' + message.type + ' ' + message.type + ' message', 'data-ui-id': 'message-' + message.type }">
+                                <div data-bind="html: message.text"></div></div></div><!-- /ko -->
+                                </div>
+
+                            </div>
+                            <div class="category-view">      </div>
+                            <div class="column main">
+                            <div id="authenticationPopup" data-bind="scope:'authenticationPopup'" style="display: none;">
+
+                                </div>
+
+                                <div class="toolbar-top">  
+                                <div class="toolbar toolbar-products" data-mage-init='{"productListToolbarForm":{"mode":"product_list_mode","direction":"product_list_dir","order":"product_list_order","limit":"product_list_limit","modeDefault":"grid","directionDefault":"asc","orderDefault":"position","limitDefault":"15","url":"http:\/\/magento2.flytheme.net\/themes\/sm_zumi\/french\/bundle-combo.html?color=58","formKey":"2X8ZrwAUSm0zmhri","post":false}}'>    <div class="modes">  <strong class="modes-label" id="modes-label">View as</strong>   <strong title="Grid" class="modes-mode active mode-grid" data-value="grid"><span>Grid</span></strong>    <a class="modes-mode mode-list" title="List" href="#" data-role="mode-switcher" data-value="list" id="mode-list" aria-labelledby="modes-label mode-list"><span>List</span></a>   </div>    <p class="toolbar-amount" id="toolbar-amount"> <span class="toolbar-number">2</span> Items </p>    <div class="toolbar-sorter sorter"><label class="sorter-label" for="sorter">Sort By</label> <select id="sorter" data-role="sorter" class="sorter-options"> <option value="position" selected="selected">Position</option> <option value="name">Product Name</option> <option value="price">Price</option></select>  <a title="Set&#x20;Descending&#x20;Direction" href="#" class="action sorter-action sort-asc" data-role="direction-switcher" data-value="desc"><span>Set Descending Direction</span></a> </div>    <div class="field limiter"><label class="label" for="limiter"><span>Show</span></label> <div class="control"><select id="limiter" data-role="limiter" class="limiter-options"> <option value="9">9</option> <option value="15" selected="selected">15</option> <option value="30">30</option></select></div><span class="limiter-text">per page</span></div>        </div></div>
+
+                                <div class="category-product products wrapper grid products-grid" id="productsPartialList">
+
+                                    <!--Here partial of list of products filtered should be loaded-->
+                                </div>
+                                <div class="toolbar-bottom">  
+                            <div class="toolbar toolbar-products" data-mage-init='{"productListToolbarForm":{"mode":"product_list_mode","direction":"product_list_dir","order":"product_list_order","limit":"product_list_limit","modeDefault":"grid","directionDefault":"asc","orderDefault":"position","limitDefault":"15","url":"http:\/\/magento2.flytheme.net\/themes\/sm_zumi\/french\/bundle-combo.html?color=58","formKey":"2X8ZrwAUSm0zmhri","post":false}}'>    <div class="modes">  <strong class="modes-label" id="modes-label">View as</strong>   <strong title="Grid" class="modes-mode active mode-grid" data-value="grid"><span>Grid</span></strong>  
+                                <a class="modes-mode mode-list" title="List" href="#" data-role="mode-switcher" data-value="list" id="mode-list" aria-labelledby="modes-label mode-list"><span>List</span></a>   </div>    <p class="toolbar-amount" id="toolbar-amount"> <span class="toolbar-number">2</span> Items </p>    <div class="toolbar-sorter sorter"><label class="sorter-label" for="sorter">Sort By</label> <select id="sorter" data-role="sorter" class="sorter-options"> <option value="position" selected="selected">Position</option> <option value="name">Product Name</option> <option value="price">Price</option></select>  <a title="Set&#x20;Descending&#x20;Direction" href="#" class="action sorter-action sort-asc" data-role="direction-switcher" data-value="desc"><span>Set Descending Direction</span></a> </div>  
+                                    <div class="field limiter"><label class="label" for="limiter"><span>Show</span></label> 
+                                <div class="control"><select id="limiter" data-role="limiter" class="limiter-options">
+                                    <option value="9">9</option>
+                                    <option value="15" selected="selected">15</option> 
+                                    <option value="30">30</option></select>
+                                </div>
+                                <span class="limiter-text">per page</span>
+
+                                </div>     
+                                </div>
+                                </div>
+
+                                <script data-role="msrp-popup-template" type="text/x-magento-template">
+                                    <div id="map-popup-click-for-price" class="map-popup">
+                                        <div class="popup-header">
+                                            <strong class="title" id="map-popup-heading-price"></strong>
+                                        </div>
+                                        <div class="popup-content">
+                                            <div class="map-info-price" id="map-popup-content">
+                                                <div class="price-box">
+                                                    <div class="map-msrp" id="map-popup-msrp-box">
+                                                        <span class="label">Price</span>
+                                                        <span class="old-price map-old-price" id="map-popup-msrp">
+                                                            <span class="price"></span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="map-price" id="map-popup-price-box">
+                                                        <span class="label">Actual Price</span>
+                                                        <span id="map-popup-price" class="actual-price"></span>
+                                                    </div>
+                                                </div>
+                                                <form action="" method="POST" class="map-form-addtocart">
+                                                    <input type="hidden" name="product" class="product_id" value="" />
+                                                    <button type="button"
+                                                            title="Add to Cart"
+                                                            class="action tocart primary">
+                                                        <span>Add to Cart</span>
+                                                    </button>
+                                                    <div class="additional-addtocart-box">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="map-text" id="map-popup-text">
+                                                Our price is lower than the manufacturer&#039;s &quot;minimum advertised price.&quot; As a result, we cannot show you the price in catalog or the product page. <br><br> You have no obligation to purchase the product once you know the price. You can simply remove the item from your cart.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </script>
+                                <script data-role="msrp-info-template" type="text/x-magento-template">
+                                    <div id="map-popup-what-this" class="map-popup">
+                                        <div class="popup-header">
+                                            <strong class="title" id="map-popup-heading-what-this"></strong>
+                                        </div>
+                                        <div class="popup-content">
+                                            <div class="map-help-text" id="map-popup-text-what-this">
+                                                Our price is lower than the manufacturer&#039;s &quot;minimum advertised price.&quot; As a result, we cannot show you the price in catalog or the product page. <br><br> You have no obligation to purchase the product once you know the price. You can simply remove the item from your cart.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </script>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-left-sidebar">
+                            <div class="sidebar sidebar-main">
+                                <div class="block filter">
+                                    <div class="block-title filter-title"><strong>Shop By</strong></div><div class="block-content filter-content">
+                                        <div class="filter-current">
+                                            <strong class="block-subtitle filter-current-subtitle" role="heading" aria-level="2" data-count="1">Now Shopping by</strong> <ol class="items">
+                                                <li class="item">
+                                                    <span class="filter-label">Color</span> <span class="filter-value">Red</span>
+                                                    <a class="action remove" href="http://magento2.flytheme.net/themes/sm_zumi/french/bundle-combo.html" title="Remove Color&#x20;Red"><span>Remove This Item</span></a>
+                                                </li>
+                                            </ol>
+                                        </div>
+                                    <div class="block-actions filter-actions">
+                                    <a href="http://magento2.flytheme.net/themes/sm_zumi/french/bundle-combo.html" class="action clear filter-clear"><span>Clear All</span></a></div>
+                                        <strong role="heading" aria-level="2" class="block-subtitle filter-subtitle">Shopping Options</strong> <dl class="filter-options" id="narrow-by-list">
+                                            <dt role="heading" aria-level="3" class="filter-options-title">Categories</dt>
+                                            <dd class="filter-options-content">
+                                                <ol class="items">
+                                                    @*@foreach (var item in Model.ListCategories)
+                                                    {   
+                                                        <li class="my item">
+                                                            <a href="http://magento2.flytheme.net/themes/sm_zumi/french/bundle-combo.html?color=58&amp;manufacturer=217">
+                                                                @item.NameEn
+                                                                <span class="count">1<span class="filter-count-label"> item</span></span>
+                                                            </a>
+                                                        </li>
+                                                    }*@
+
+                                                </ol>
+                                            </dd>
+                                            <dt role="heading" aria-level="3" class="filter-options-title">Types</dt>
+                                            <dd class="filter-options-content">
+                                                <ol class="items">
+                                                    <!--foreach (var item in Model.ListTypes)
+                                                    {
+                                                        <li class="my item">
+                                                            <a href="http://magento2.flytheme.net/themes/sm_zumi/french/bundle-combo.html?color=58&amp;material=47">
+                                                                item.NameEn
+                                                                <span class="count">-->@*@item.Products.Count*@<!--<span class="filter-count-label"> item</span></span>
+                                                            </a>
+                                                        </li>
+                                                    }-->
+                                                </ol>
+                                            </dd>
+                                            <dt role="heading" aria-level="3" class="filter-options-title">Price</dt>
+                                            <dd class="filter-options-content">
+                                                <div class="price-slider-wrap">
+                                                    <div id="price-slider" data-rate="1" data-min-standard="191" data-max-standard="233"></div><div class="price-slider-values"><span class="filter-currency">$</span> <input name="price_minimum" id="price_minimum" value="191" type="text"><span class="price-filter-separator">&nbsp;-&nbsp;</span> <span class="filter-currency">$</span> <input name="price_maximum" id="price_maximum" value="233" type="text"></div>
+                                                </div>
+                                            </dd>
+                                            <dt role="heading" aria-level="3" class="filter-options-title">Size</dt>
+                                            <dd class="filter-options-content">
+                                                <div class="swatch-attribute swatch-layered size" attribute-code="size" attribute-id="137"><div class="swatch-attribute-options clearfix"> <a href="http://magento2.flytheme.net/themes/sm_zumi/french/bundle-combo.html?color=58&amp;size=91" aria-label="55&#x20;cm" class="swatch-option-link-layered">  <div class="swatch-option text " tabindex="-1" option-type="0" option-id="91" option-label="55&#x20;cm" option-tooltip-thumb="" option-tooltip-value="">55 cm</div> </a> </div></div>
+                                                <script>
+                                                    $(document).ready(function () {
+                                                        $('.swatch-layered.size')
+                                                            .find('[option-type="1"], [option-type="2"], [option-type="0"], [option-type="3"]')
+                                                            .SwatchRendererTooltip();
+                                                    });</script>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div><div class="sidebar sidebar-additional">
+                                <div id="sm_filterproducts_1573430225516361613" class="list-slider"> <div class="block-title"><span>Best Sellers</span></div>  <div class="owl-carousel">   <div class="item product product-item"> <div class="item-inner clearfix">  <div class="box-image"><a href="http://magento2.flytheme.net/themes/sm_zumi/french/lightweight-on-ear-headphones-black.html" class="product photo product-item-photo" tabindex="-1">  <span class="product-image-container" style="width:75px;"><span class="product-image-wrapper" style="padding-bottom: 100%;"><img class="product-image-photo lazyload" src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/lazyloading/blank.png" data-src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/707faaf46f909058b8e9ebf9f1f6ea67/6/_/6_2.jpg" width="" height="" alt="Heston Boiler Espresso Machine" /></span></span></a></div><div class="product details product-item-details box-info">   <div class="product-reviews-summary short"> <div class="rating-summary"><span class="label"><span>Rating:</span></span> <div class="rating-result" title="93%"><span style="width:93%"><span>93%</span></span></div></div> <div class="reviews-actions"><a class="action view" href="http://magento2.flytheme.net/themes/sm_zumi/french/lightweight-on-ear-headphones-black.html#reviews">1&nbsp;<span>Review</span></a></div></div>  <h2 class="product name product-name product-item-name"><a class="product-item-link" href="http://magento2.flytheme.net/themes/sm_zumi/french/lightweight-on-ear-headphones-black.html">Heston Boiler Espresso Machine</a></h2><div class="price-box price-final_price" data-role="priceBox" data-product-id="2057" data-price-box="product-id-2057">   <span class="special-price">  <span class="price-container price-final_price&#x20;tax&#x20;weee"> <span class="price-label">Special Price</span>  <span id="product-price-2057" data-price-amount="60" data-price-type="finalPrice" class="price-wrapper "><span class="price">$60.00</span></span>  </span></span> <span class="old-price">  <span class="price-container price-final_price&#x20;tax&#x20;weee"> <span class="price-label">Regular Price</span>  <span id="old-price-2057" data-price-amount="70" data-price-type="oldPrice" class="price-wrapper "><span class="price">$70.00</span></span>  </span></span>  </div> </div></div>   <div class="item-inner clearfix">  <div class="box-image"><a href="http://magento2.flytheme.net/themes/sm_zumi/french/ricoh-theta-360-spherical-camera.html" class="product photo product-item-photo" tabindex="-1">  <span class="product-image-container" style="width:75px;"><span class="product-image-wrapper" style="padding-bottom: 100%;"><img class="product-image-photo lazyload" src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/lazyloading/blank.png" data-src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/707faaf46f909058b8e9ebf9f1f6ea67/9/_/9_4.jpg" width="" height="" alt="Philips HR1861 Whole Fruit Juicer" /></span></span></a></div><div class="product details product-item-details box-info">   <div class="product-reviews-summary short"> <div class="rating-summary"><span class="label"><span>Rating:</span></span> <div class="rating-result" title="86%"><span style="width:86%"><span>86%</span></span></div></div> <div class="reviews-actions"><a class="action view" href="http://magento2.flytheme.net/themes/sm_zumi/french/ricoh-theta-360-spherical-camera.html#reviews">3&nbsp;<span>Reviews</span></a></div></div>  <h2 class="product name product-name product-item-name"><a class="product-item-link" href="http://magento2.flytheme.net/themes/sm_zumi/french/ricoh-theta-360-spherical-camera.html">Philips HR1861 Whole Fruit Juicer</a></h2><div class="price-box price-final_price" data-role="priceBox" data-product-id="2060" data-price-box="product-id-2060">     <span class="price-container price-final_price&#x20;tax&#x20;weee"> <span id="product-price-2060" data-price-amount="4.7" data-price-type="finalPrice" class="price-wrapper "><span class="price">$4.70</span></span>  </span>  </div> </div></div>   <div class="item-inner clearfix">  <div class="box-image"><a href="http://magento2.flytheme.net/themes/sm_zumi/french/unisex-casual-high-quality-canvas.html" class="product photo product-item-photo" tabindex="-1">  <span class="product-image-container" style="width:75px;"><span class="product-image-wrapper" style="padding-bottom: 100%;"><img class="product-image-photo lazyload" src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/lazyloading/blank.png" data-src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/707faaf46f909058b8e9ebf9f1f6ea67/2/2/22_5.jpg" width="" height="" alt="Unisex Casual High Quality Canvas " /></span></span></a></div><div class="product details product-item-details box-info">   <div class="product-reviews-summary short"> <div class="rating-summary"><span class="label"><span>Rating:</span></span> <div class="rating-result" title="83%"><span style="width:83%"><span>83%</span></span></div></div> <div class="reviews-actions"><a class="action view" href="http://magento2.flytheme.net/themes/sm_zumi/french/unisex-casual-high-quality-canvas.html#reviews">2&nbsp;<span>Reviews</span></a></div></div>  <h2 class="product name product-name product-item-name"><a class="product-item-link" href="http://magento2.flytheme.net/themes/sm_zumi/french/unisex-casual-high-quality-canvas.html">Unisex Casual High Quality Canvas </a></h2><div class="price-box price-final_price" data-role="priceBox" data-product-id="2078" data-price-box="product-id-2078">     <span class="price-container price-final_price&#x20;tax&#x20;weee"> <span id="product-price-2078" data-price-amount="79" data-price-type="finalPrice" class="price-wrapper "><span class="price">$79.00</span></span>  </span>  </div> </div></div>   <div class="item-inner clearfix">  <div class="box-image"><a href="http://magento2.flytheme.net/themes/sm_zumi/french/tivi-bridge-moca-2-0-adapter.html" class="product photo product-item-photo" tabindex="-1">  <span class="product-image-container" style="width:75px;"><span class="product-image-wrapper" style="padding-bottom: 100%;"><img class="product-image-photo lazyload" src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/lazyloading/blank.png" data-src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/707faaf46f909058b8e9ebf9f1f6ea67/8/_/8_4.jpg" width="" height="" alt="Philips HR1861 Whole Fruit Juicer" /></span></span></a></div><div class="product details product-item-details box-info">   <div class="product-reviews-summary short"> <div class="rating-summary"><span class="label"><span>Rating:</span></span> <div class="rating-result" title="95%"><span style="width:95%"><span>95%</span></span></div></div> <div class="reviews-actions"><a class="action view" href="http://magento2.flytheme.net/themes/sm_zumi/french/tivi-bridge-moca-2-0-adapter.html#reviews">2&nbsp;<span>Reviews</span></a></div></div>  <h2 class="product name product-name product-item-name"><a class="product-item-link" href="http://magento2.flytheme.net/themes/sm_zumi/french/tivi-bridge-moca-2-0-adapter.html">Philips HR1861 Whole Fruit Juicer</a></h2><div class="price-box price-final_price" data-role="priceBox" data-product-id="2059" data-price-box="product-id-2059">     <span class="price-container price-final_price&#x20;tax&#x20;weee"> <span id="product-price-2059" data-price-amount="34" data-price-type="finalPrice" class="price-wrapper "><span class="price">$34.00</span></span>  </span>  </div> </div></div>   <div class="item-inner clearfix">  <div class="box-image"><a href="http://magento2.flytheme.net/themes/sm_zumi/french/panasonic-in-ear-stereo-earphones.html" class="product photo product-item-photo" tabindex="-1">  <span class="product-image-container" style="width:75px;"><span class="product-image-wrapper" style="padding-bottom: 100%;"><img class="product-image-photo lazyload" src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/lazyloading/blank.png" data-src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/707faaf46f909058b8e9ebf9f1f6ea67/7/_/7_1_3.jpg" width="" height="" alt="Panasonic  In-Ear Stereo Earphones" /></span></span></a></div><div class="product details product-item-details box-info">   <div class="product-reviews-summary short"> <div class="rating-summary"><span class="label"><span>Rating:</span></span> <div class="rating-result" title="83%"><span style="width:83%"><span>83%</span></span></div></div> <div class="reviews-actions"><a class="action view" href="http://magento2.flytheme.net/themes/sm_zumi/french/panasonic-in-ear-stereo-earphones.html#reviews">3&nbsp;<span>Reviews</span></a></div></div>  <h2 class="product name product-name product-item-name"><a class="product-item-link" href="http://magento2.flytheme.net/themes/sm_zumi/french/panasonic-in-ear-stereo-earphones.html">Panasonic  In-Ear Stereo Earphones</a></h2><div class="price-box price-final_price" data-role="priceBox" data-product-id="2058" data-price-box="product-id-2058">     <span class="price-container price-final_price&#x20;tax&#x20;weee"> <span id="product-price-2058" data-price-amount="72" data-price-type="finalPrice" class="price-wrapper "><span class="price">$72.00</span></span>  </span>  </div> </div></div></div>   <div class="item product product-item"> <div class="item-inner clearfix">  <div class="box-image"><a href="http://magento2.flytheme.net/themes/sm_zumi/french/new-style-motorcycle-boots.html" class="product photo product-item-photo" tabindex="-1">  <span class="product-image-container" style="width:75px;"><span class="product-image-wrapper" style="padding-bottom: 100%;"><img class="product-image-photo lazyload" src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/lazyloading/blank.png" data-src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/707faaf46f909058b8e9ebf9f1f6ea67/5/_/5_2.jpg" width="" height="" alt="The Wonder and Science of Sound" /></span></span></a></div><div class="product details product-item-details box-info">   <div class="product-reviews-summary short"> <div class="rating-summary"><span class="label"><span>Rating:</span></span> <div class="rating-result" title="80%"><span style="width:80%"><span>80%</span></span></div></div> <div class="reviews-actions"><a class="action view" href="http://magento2.flytheme.net/themes/sm_zumi/french/new-style-motorcycle-boots.html#reviews">2&nbsp;<span>Reviews</span></a></div></div>  <h2 class="product name product-name product-item-name"><a class="product-item-link" href="http://magento2.flytheme.net/themes/sm_zumi/french/new-style-motorcycle-boots.html">The Wonder and Science of Sound</a></h2><div class="price-box price-final_price" data-role="priceBox" data-product-id="2056" data-price-box="product-id-2056">     <span class="price-container price-final_price&#x20;tax&#x20;weee"> <span id="product-price-2056" data-price-amount="59" data-price-type="finalPrice" class="price-wrapper "><span class="price">$59.00</span></span>  </span>  </div> </div></div>   <div class="item-inner clearfix">  <div class="box-image"><a href="http://magento2.flytheme.net/themes/sm_zumi/french/hd-tablet-with-alexa-hands-free.html" class="product photo product-item-photo" tabindex="-1">  <span class="product-image-container" style="width:75px;"><span class="product-image-wrapper" style="padding-bottom: 100%;"><img class="product-image-photo lazyload" src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/lazyloading/blank.png" data-src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/707faaf46f909058b8e9ebf9f1f6ea67/3/_/3_1.jpg" width="" height="" alt="Heston Boiler Espresso Machine" /></span></span></a></div><div class="product details product-item-details box-info">   <div class="product-reviews-summary short"> <div class="rating-summary"><span class="label"><span>Rating:</span></span> <div class="rating-result" title="90%"><span style="width:90%"><span>90%</span></span></div></div> <div class="reviews-actions"><a class="action view" href="http://magento2.flytheme.net/themes/sm_zumi/french/hd-tablet-with-alexa-hands-free.html#reviews">1&nbsp;<span>Review</span></a></div></div>  <h2 class="product name product-name product-item-name"><a class="product-item-link" href="http://magento2.flytheme.net/themes/sm_zumi/french/hd-tablet-with-alexa-hands-free.html">Heston Boiler Espresso Machine</a></h2><div class="price-box price-final_price" data-role="priceBox" data-product-id="2054" data-price-box="product-id-2054">   <span class="special-price">  <span class="price-container price-final_price&#x20;tax&#x20;weee"> <span class="price-label">Special Price</span>  <span id="product-price-2054" data-price-amount="55" data-price-type="finalPrice" class="price-wrapper "><span class="price">$55.00</span></span>  </span></span> <span class="old-price">  <span class="price-container price-final_price&#x20;tax&#x20;weee"> <span class="price-label">Regular Price</span>  <span id="old-price-2054" data-price-amount="75" data-price-type="oldPrice" class="price-wrapper "><span class="price">$75.00</span></span>  </span></span>  </div> </div></div>   <div class="item-inner clearfix">  <div class="box-image"><a href="http://magento2.flytheme.net/themes/sm_zumi/french/hp-elite-computer-c2d-3-0-new-4gb.html" class="product photo product-item-photo" tabindex="-1">  <span class="product-image-container" style="width:75px;"><span class="product-image-wrapper" style="padding-bottom: 100%;"><img class="product-image-photo lazyload" src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/lazyloading/blank.png" data-src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/707faaf46f909058b8e9ebf9f1f6ea67/1/1/11_4.jpg" width="" height="" alt="Philips HR1861 Whole Fruit Juicer" /></span></span></a></div><div class="product details product-item-details box-info">   <div class="product-reviews-summary short"> <div class="rating-summary"><span class="label"><span>Rating:</span></span> <div class="rating-result" title="76%"><span style="width:76%"><span>76%</span></span></div></div> <div class="reviews-actions"><a class="action view" href="http://magento2.flytheme.net/themes/sm_zumi/french/hp-elite-computer-c2d-3-0-new-4gb.html#reviews">2&nbsp;<span>Reviews</span></a></div></div>  <h2 class="product name product-name product-item-name"><a class="product-item-link" href="http://magento2.flytheme.net/themes/sm_zumi/french/hp-elite-computer-c2d-3-0-new-4gb.html">Philips HR1861 Whole Fruit Juicer</a></h2><div class="price-box price-final_price" data-role="priceBox" data-product-id="2062" data-price-box="product-id-2062">     <span class="price-container price-final_price&#x20;tax&#x20;weee"> <span id="product-price-2062" data-price-amount="1.6" data-price-type="finalPrice" class="price-wrapper "><span class="price">$1.60</span></span>  </span>  </div> </div></div>   <div class="item-inner clearfix">  <div class="box-image"><a href="http://magento2.flytheme.net/themes/sm_zumi/french/touch-wireless-bluetooth-portable-speaker.html" class="product photo product-item-photo" tabindex="-1">  <span class="product-image-container" style="width:75px;"><span class="product-image-wrapper" style="padding-bottom: 100%;"><img class="product-image-photo lazyload" src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/lazyloading/blank.png" data-src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/707faaf46f909058b8e9ebf9f1f6ea67/2/_/2.jpg" width="" height="" alt="Philips HR1861 Whole Fruit Juicer" /></span></span></a></div><div class="product details product-item-details box-info">   <div class="product-reviews-summary short"> <div class="rating-summary"><span class="label"><span>Rating:</span></span> <div class="rating-result" title="100%"><span style="width:100%"><span>100%</span></span></div></div> <div class="reviews-actions"><a class="action view" href="http://magento2.flytheme.net/themes/sm_zumi/french/touch-wireless-bluetooth-portable-speaker.html#reviews">1&nbsp;<span>Review</span></a></div></div>  <h2 class="product name product-name product-item-name"><a class="product-item-link" href="http://magento2.flytheme.net/themes/sm_zumi/french/touch-wireless-bluetooth-portable-speaker.html">Philips HR1861 Whole Fruit Juicer</a></h2><div class="price-box price-final_price" data-role="priceBox" data-product-id="2053" data-price-box="product-id-2053">   <span class="special-price">  <span class="price-container price-final_price&#x20;tax&#x20;weee"> <span class="price-label">Special Price</span>  <span id="product-price-2053" data-price-amount="60" data-price-type="finalPrice" class="price-wrapper "><span class="price">$60.00</span></span>  </span></span> <span class="old-price">  <span class="price-container price-final_price&#x20;tax&#x20;weee"> <span class="price-label">Regular Price</span>  <span id="old-price-2053" data-price-amount="65" data-price-type="oldPrice" class="price-wrapper "><span class="price">$65.00</span></span>  </span></span>  </div> </div></div></div> </div></div>
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+
+                                        var element = $('#sm_filterproducts_1573430225516361613');
+
+                                        function CountDown(date, id) {
+                                            dateNow = new Date();
+                                            amount = date.getTime() - dateNow.getTime();
+                                            delete dateNow;
+                                            if (amount < 0) {
+                                                id.html("Now!");
+                                            } else {
+                                                days = 0; hours = 0; mins = 0; secs = 0; out = "";
+                                                amount = Math.floor(amount / 1000);
+                                                days = Math.floor(amount / 86400);
+                                                amount = amount % 86400;
+                                                hours = Math.floor(amount / 3600);
+                                                amount = amount % 3600;
+                                                mins = Math.floor(amount / 60);
+                                                amount = amount % 60;
+                                                secs = Math.floor(amount);
+                                                $(".time-day .num-time", id).text(days);
+                                                $(".time-day .title-time", id).text(((days <= 1) ? "Day" : "Days"));
+                                                $(".time-hours .num-time", id).text(hours);
+                                                $(".time-hours .title-time", id).text(((hours <= 1) ? "Hour" : "Hours"));
+                                                $(".time-mins .num-time", id).text(mins);
+                                                $(".time-mins .title-time", id).text(((mins <= 1) ? "Min" : "Mins"));
+                                                $(".time-secs .num-time", id).text(secs);
+                                                $(".time-secs .title-time", id).text(((secs <= 1) ? "Sec" : "Secs"));
+                                                setTimeout(function () { CountDown(date, id) }, 1000);
+                                            }
+                                        }
+                                        $(".deals-countdown", $element).each(function () {
+                                            var timer = $(this).data('timer');
+                                            var data = new Date(timer);
+                                            CountDown(data, $(this));
+                                        });
+
+                                        $('#sm_filterproducts_1573430225516361613 .owl-carousel').owlCarousel({
+                                            loop: false,
+                                            nav: false,
+                                            dots: false,
+                                            autoplay: false,
+                                            autoplayHoverPause: true,
+                                            margin: 20,
+                                            responsive: {
+                                                0: {
+                                                    items: 1
+                                                },
+                                                480: {
+                                                    items: 1
+                                                },
+                                                768: {
+                                                    items: 1
+                                                },
+                                                991: {
+                                                    items: 1
+                                                },
+                                                1200: {
+                                                    items: 1
+                                                }
+                                            }
+                                        });
+                                    });
+                                </script>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+
+    </div>
+
+    @*<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>*@
+    @*@section scripts{*@
+    @*<script>
+      //  urlShopPartial = '@Url.Action("ListPartial","Products")';
+        text1='@Html.CustomDisplayText("OPS")';
+        text2='@Html.CustomDisplayText("You do not have any product for this category ")';
+       // ProductsFilterModel.ProductCategoryID = '@ViewBag.idType';
+      //  FilteredProducts(ProductsFilterModel.ProductCategoryID);
+    </script*@>
+    @*}*@
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+           // alert("kdjfdfnd");
+                $.ajax({
+                    url: '@Url.Action("ListPartial","Products")', // La ressource ciblée
+                    type: 'GET', // Le type de la requête HTTP.
+                    data: {typeID: '@ViewBag.typeID'},
+                 success: function (data) {
+                     //alert("successs");
+                     $('#productsPartialList').html(data);
+                 }, error: function () {
+
+                 }
+
+             });
+         });
+    </script>
+</body>
+</html>

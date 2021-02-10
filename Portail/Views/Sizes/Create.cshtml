@@ -1,0 +1,78 @@
+﻿@model BLL.Entities.Size
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Create", "Sizes", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN VALIDATION STATES-->
+            <div class="portlet box green">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-gift"></i>Create Size
+                    </div>
+
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    <form action="#" id="form_sample_3" class="form-horizontal">
+                        <div class="form-body" style="display: grid; ">
+                            <h3 class="form-section"> <small> </small></h3>
+                            <div class="alert alert-danger display-hide">
+                                <button class="close" data-close="alert"></button>
+
+                            </div>
+                            <div class="alert alert-success display-hide">
+                                <button class="close" data-close="alert"></button>
+                                Your form validation is successful!
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Value, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.Value, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Value, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.UnitPrice, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.UnitPrice, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.UnitPrice, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+
+                        </div>
+
+
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn green">Submit</button>
+                                    <button type="button" class="btn default">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- END FORM-->
+
+                </div>
+                <!-- END VALIDATION STATES-->
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+}
+

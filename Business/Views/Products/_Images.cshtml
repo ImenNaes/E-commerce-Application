@@ -1,0 +1,171 @@
+﻿@model BLL.Entities.Product
+
+<div id="carousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        @if (Model.MainImage.ProductSmallImages != null)
+        {
+            
+             int j = 0;
+            
+           foreach (var item in Model.MainImage.ProductSmallImages)
+            {
+                if (j == 0)
+                {
+                    <div id="mainImages_div">
+                        <div id="mainimages_@j" class="item active" data-thumb="0" data-color="color-3">
+                            <div style="padding:50px; width:65.333333%;   background-position: center;  background-size: cover;background-image: url('@Url.Content(String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.SmallImageContent)))');"
+                                 class="col-xs-4">
+                                <canvas class="table-bordered" height="400" width="400" id="canvas"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Images_div">
+                        <div style="padding:50px; width:65.333333%;   background-position: center;  background-size: cover;background-image: url('@Url.Content(String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.SmallImageContent)))');"
+                             class="col-xs-4">
+                            <canvas class="table-bordered" height="400" width="400" id="canvas"></canvas>
+                        </div>
+                    </div>
+                }
+            }
+            }
+
+
+            @*<div class="item" data-thumb="@j" data-color="color-2">
+                <a data-fancybox="group"
+                   target="_blank" href="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.SmallImage))">
+                    <img class="product-featured-image"
+                         data-zoom-image="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.SmallImage))"
+                         src="@String.Format("data:image/png;base64,{0}", Convert.ToBase64String(item.SmallImage))">
+                </a>
+            </div>*@
+
+            @*</div>*@
+        </div>
+</div>
+<div class="clearfix">
+    <div id="thumbcarousel" class="carousel slide" data-interval="false">
+        <div class="carousel-inner">
+
+            <div data-target="#carousel" data-slide-to="3" class="thumb">
+
+                <img src="~/Content/images/Captureg.PNG" />
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="~/plugins/elevatezoom/jquery.elevatezoom.js"></script>
+<script src="~/plugins/js/custom.js"></script>
+
+
+
+
+
+
+
+
+<!--<div class="gallery-placeholder" data-gallery-role="gallery-placeholder">
+
+    <div class="fotorama--hidden"></div>
+    <style>
+        .fotorama1580608812337 .fotorama__nav--thumbs .fotorama__nav__frame {
+            padding: 20px;
+            height: 90px
+        }
+
+        .fotorama1580608812337 .fotorama__thumb-border {
+            height: 90px;
+            border-width: 1px;
+            margin-top: 20px
+        }
+    </style>
+    <div class="fotorama-item fotorama fotorama1580608812337" data-gallery-role="gallery">
+        <div data-gallery-role="fotorama__focusable-start" tabindex="-1"></div>
+        <div class="fotorama__wrap fotorama__wrap--css3 fotorama__wrap--slide fotorama__wrap--toggle-arrows" style="min-width: 0px; max-width: 100%;">
+            <div class="fotorama__stage" data-fotorama-stage="fotorama__stage" style="width: 421px; height: 421px;">
+                <div class="fotorama__fullscreen-icon" data-gallery-role="fotorama__fullscreen-icon" tabindex="0" aria-label="Exit fullscreen" role="button"></div>
+                <div class="fotorama__arr fotorama__arr--prev" tabindex="0" role="button" aria-label="Previous" data-gallery-role="arrow">
+                    <div class="fotorama__arr__arr"></div>
+                </div>
+                <div class="fotorama__stage__shaft fotorama__grab" tabindex="0" data-gallery-role="stage-shaft" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); margin-left: 0px; width: 421px;">
+                    <div class="fotorama__stage__frame fotorama_vertical_ratio fotorama__loaded fotorama__loaded--img fotorama__active" aria-hidden="false" data-active="true" style="left: 0px;" href="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/7bb6ddbe065d2624ff9fe9f2ead83102/6/_/6_2.jpg">
+                        <img src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/7bb6ddbe065d2624ff9fe9f2ead83102/6/_/6_2.jpg" alt="Heston Boiler Espresso Machine" aria-labelledby="labelledby1580608812369" class="fotorama__img magnify-opaque magnify-opaque" aria-hidden="false" id="magnifier-item-0"><div class="fotorama__caption" aria-hidden="true">
+                            <div class="fotorama__caption__wrap" id="labelledby1580608812369">Heston Boiler Espresso Machine</div>
+                        </div><div class="magnify-lens" data-gallery-role="magnifier-zoom" style="width: 219px; height: 219px; left: 63.5px; top: 118.5px;"></div>
+                    </div><div class="fotorama__stage__frame fotorama_vertical_ratio fotorama__loaded fotorama__loaded--img" aria-hidden="true" style="left: -423px;" href="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/7bb6ddbe065d2624ff9fe9f2ead83102/1/0/10_2.jpg">
+                        <img src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/7bb6ddbe065d2624ff9fe9f2ead83102/1/0/10_2.jpg" alt="Heston Boiler Espresso Machine" aria-labelledby="labelledby1580608812370" class="fotorama__img" aria-hidden="false"><div class="fotorama__caption" aria-hidden="true">
+                            <div class="fotorama__caption__wrap" id="labelledby1580608812370">Heston Boiler Espresso Machine</div>
+                        </div>
+                    </div><div class="fotorama__stage__frame fotorama_vertical_ratio fotorama__loaded fotorama__loaded--img" aria-hidden="true" style="left: 423px;" href="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/7bb6ddbe065d2624ff9fe9f2ead83102/7/_/7_1_2.jpg">
+                        <img src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/7bb6ddbe065d2624ff9fe9f2ead83102/7/_/7_1_2.jpg" alt="Heston Boiler Espresso Machine" aria-labelledby="labelledby1580608812370" class="fotorama__img" aria-hidden="false"><div class="fotorama__caption" aria-hidden="true">
+                            <div class="fotorama__caption__wrap" id="labelledby1580608812370">Heston Boiler Espresso Machine</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fotorama__arr fotorama__arr--next" tabindex="0" role="button" aria-label="Next" data-gallery-role="arrow">
+                    <div class="fotorama__arr__arr"></div>
+                </div>
+                <div class="fotorama__video-close"></div>
+                <div class="fotorama__zoom-in zoom-in-loaded" data-gallery-role="fotorama__zoom-in" aria-label="Zoom in" role="button" tabindex="0"></div>
+                <div class="fotorama__zoom-out zoom-out-loaded" data-gallery-role="fotorama__zoom-out" aria-label="Zoom out" role="button" tabindex="0"></div>
+                <div class="fotorama__spinner"></div>
+            </div>
+
+
+            <div class="fotorama__nav-wrap fotorama__nav-wrap--horizontal" data-gallery-role="nav-wrap">
+                <div class="fotorama__nav fotorama__nav--thumbs fotorama__shadows--right" style="height: 130px; width: 421px;">
+
+                    <div class="fotorama__thumb__arr fotorama__thumb__arr--left fotorama__arr--disabled" role="button" aria-label="Previous" data-gallery-role="arrow" tabindex="-1" disabled="disabled">
+                        <div class="fotorama__thumb--icon"></div>
+                    </div>
+                    <div class="fotorama__nav__shaft fotorama__grab" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);">
+                        <div class="fotorama__thumb-border" style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px); width: 90px; height: 90px;"></div>
+                        <div class="fotorama__nav__frame fotorama__nav__frame--thumb fotorama__active" tabindex="0" role="button" data-gallery-role="nav-frame" data-nav-type="thumb" aria-label="Heston Boiler Espresso Machine" style="width: 90px;" data-active="true">
+                            <div class="fotorama__thumb fotorama_vertical_ratio fotorama__loaded fotorama__loaded--img">
+                                <img src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/f74bb35d241a72e1cd493d67bc705c68/6/_/6_2.jpg" alt="Heston Boiler Espresso Machine" aria-labelledby="labelledby1580608812369" class="fotorama__img" aria-hidden="false">
+                            </div>
+                        </div><div class="fotorama__nav__frame fotorama__nav__frame--thumb" tabindex="0" role="button" data-gallery-role="nav-frame" data-nav-type="thumb" aria-label="Heston Boiler Espresso Machine" style="width: 90px;">
+                            <div class="fotorama__thumb fotorama_vertical_ratio fotorama__loaded fotorama__loaded--img">
+                                <img src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/f74bb35d241a72e1cd493d67bc705c68/7/_/7_1_2.jpg" alt="Heston Boiler Espresso Machine" aria-labelledby="labelledby1580608812370" class="fotorama__img" aria-hidden="false">
+                            </div>
+                        </div><div class="fotorama__nav__frame fotorama__nav__frame--thumb" tabindex="0" role="button" data-gallery-role="nav-frame" data-nav-type="thumb" aria-label="Heston Boiler Espresso Machine" style="width: 90px;">
+                            <div class="fotorama__thumb fotorama_vertical_ratio fotorama__loaded fotorama__loaded--img">
+                                <img src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/f74bb35d241a72e1cd493d67bc705c68/8/_/8_2.jpg" alt="Heston Boiler Espresso Machine" class="fotorama__img" aria-hidden="false">
+                            </div>
+                        </div><div class="fotorama__nav__frame fotorama__nav__frame--thumb" tabindex="0" role="button" data-gallery-role="nav-frame" data-nav-type="thumb" aria-label="Heston Boiler Espresso Machine" style="width: 90px;">
+                            <div class="fotorama__thumb fotorama_vertical_ratio fotorama__loaded fotorama__loaded--img">
+                                <img src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/f74bb35d241a72e1cd493d67bc705c68/9/_/9_1.jpg" alt="Heston Boiler Espresso Machine" class="fotorama__img" aria-hidden="false">
+                            </div>
+                        </div><div class="fotorama__nav__frame fotorama__nav__frame--thumb" tabindex="0" role="button" data-gallery-role="nav-frame" data-nav-type="thumb" aria-label="Heston Boiler Espresso Machine" style="width: 90px;">
+                            <div class="fotorama__thumb fotorama_vertical_ratio fotorama__loaded fotorama__loaded--img">
+                                <img src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/f74bb35d241a72e1cd493d67bc705c68/1/0/10_2.jpg" alt="Heston Boiler Espresso Machine" aria-labelledby="labelledby1580608812370" class="fotorama__img" aria-hidden="false">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fotorama__thumb__arr fotorama__thumb__arr--right" role="button" aria-label="Next" data-gallery-role="arrow" tabindex="-1">
+                        <div class="fotorama__thumb--icon"></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div data-gallery-role="fotorama__focusable-end" tabindex="-1"></div>
+    </div>
+    <div class="magnifier-preview" data-gallery-role="magnifier" id="preview" style="width: 458px; height: 421px; top: 590.172px; left: 530.5px;"><img src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/34818fa70e4ffe28e005279c8eb91053/6/_/6_2.jpg" id="magnifier-item-0-large" class="magnifier-large" style="width: 871px; height: 800px; left: -132px; top: -230px;"></div>
+</div>-->
+<!--Fix for jumping content. Loader must be the same size as gallery.-->
+<!--<script>
+                                            var config = {
+                                                "width": 600,
+                                                "thumbheight": 148,
+                                                "navtype": "slides",
+                                                "height": 600
+                                            },
+                                                thumbBarHeight = 0,
+                                                loader = document.querySelectorAll('[data-gallery-role="gallery-placeholder"] [data-role="loader"]')[0];
+
+                                            if (config.navtype === 'horizontal') {
+                                                thumbBarHeight = config.thumbheight;
+                                            }
+
+                                            loader.style.paddingBottom = (config.height / config.width * 100) + "%";</script>-->

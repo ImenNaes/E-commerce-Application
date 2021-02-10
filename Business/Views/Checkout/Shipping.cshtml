@@ -1,0 +1,1465 @@
+﻿
+@{
+    ViewBag.Title = "Shipping";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main id="maincontent" class="page-main">
+    <a id="contentarea" tabindex="-1"></a><div class="columns col1-layout">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <div class="column main">
+                        <input name="form_key" type="hidden" value="mDtuLKA3rtoIXIs0"> <div id="authenticationPopup" data-bind="scope:'authenticationPopup'" style="display: none;">
+                            <!-- ko template: getTemplate() -->
+                            <!-- /ko -->
+                        </div>      <div id="checkout" data-bind="scope:'checkout'" class="checkout-container">
+                            <!-- ko template: getTemplate() -->
+                            <!-- ko foreach: getRegion('authentication') -->
+                            <!-- ko template: getTemplate() -->
+                            <div class="authentication-wrapper" data-block="authentication" data-bind="visible: isActive()">
+                                <button type="button" class="action action-auth-toggle" data-trigger="authentication">
+                                    <span data-bind="i18n: 'Sign In'">Login</span>
+                                </button>
+
+                                <!--
+                                /**
+                                 * Copyright © Magento, Inc. All rights reserved.
+                                 * See COPYING.txt for license details.
+                                 */
+                                -->
+
+                                <aside role="dialog" class="modal-custom authentication-dropdown
+       custom-slide
+       " aria-describedby="modal-content-18" data-role="modal" data-type="custom" tabindex="0">
+                                    <div data-role="focusable-start" tabindex="0"></div>
+                                    <div class="modal-inner-wrap" data-role="focusable-scope">
+                                        <header class="modal-header">
+
+                                            <button class="action-close" data-role="closeBtn" type="button">
+                                                <span>Close</span>
+                                            </button>
+                                        </header>
+                                        <div id="modal-content-18" class="modal-content" data-role="content">
+                                            <div class="block-authentication" style="" data-bind="mageInit: {
+            'Magento_Ui/js/modal/modal':{
+                'type': 'custom',
+                'modalClass': 'authentication-dropdown',
+                'trigger': '[data-trigger=authentication]',
+                'wrapperClass': 'authentication-wrapper',
+                'parentModalClass': '_has-modal-custom _has-auth-shown',
+                'responsive': true,
+                'responsiveClass': 'custom-slide',
+                'overlayClass': 'dropdown-overlay modal-custom-overlay',
+                'buttons': []
+            }}">
+                                                <!-- ko foreach: getRegion('before') --><!-- /ko -->
+                                                <div class="block block-customer-login" data-bind="attr: {'data-label': $t('or')}" data-label="or">
+                                                    <div class="block-title">
+                                                        <strong id="block-customer-login-heading" role="heading" aria-level="2" data-bind="i18n: 'Sign In'">Login</strong>
+                                                    </div>
+                                                    <!-- ko foreach: getRegion('messages') -->
+                                                    <!-- ko template: getTemplate() -->
+                                                    <div data-role="checkout-messages" class="messages" data-bind="visible: isVisible(), click: removeAll">
+                                                        <!-- ko foreach: messageContainer.getErrorMessages() --><!--/ko-->
+                                                        <!-- ko foreach: messageContainer.getSuccessMessages() --><!--/ko-->
+                                                    </div>
+                                                    <!-- /ko -->
+                                                    <!--/ko-->
+                                                    <div class="block-content" aria-labelledby="block-customer-login-heading">
+                                                        <form data-role="login" data-bind="submit:login" method="post">
+                                                            <div class="fieldset" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}" data-hasrequired="* Required Fields">
+                                                                <div class="field field-email required">
+                                                                    <label class="label" for="login-email"><span data-bind="i18n: 'Email Address'">Email Address</span></label>
+                                                                    <div class="control">
+                                                                        <input type="email" class="input-text" id="login-email" name="username" data-bind="attr: {autocomplete: autocomplete}" data-validate="{required:true, 'validate-email':true}" autocomplete="off">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="field field-password required">
+                                                                    <label for="login-password" class="label"><span data-bind="i18n: 'Password'">Password</span></label>
+                                                                    <div class="control">
+                                                                        <input type="password" class="input-text" id="login-password" name="password" data-bind="attr: {autocomplete: autocomplete}" data-validate="{required:true}" autocomplete="off">
+                                                                    </div>
+                                                                </div>
+                                                                <!-- ko foreach: getRegion('additional-login-form-fields') -->
+                                                                <!-- ko template: getTemplate() -->
+                                                                <input name="captcha_form_id" type="hidden" data-bind="value: formId,  attr: {'data-scope': dataScope}" value="user_login" data-scope="">
+                                                                <!-- ko if: (isRequired() && getIsVisible())--><!-- /ko -->
+                                                                <!-- /ko -->
+                                                                <!-- /ko -->
+                                                            </div>
+                                                            <div class="actions-toolbar">
+                                                                <input name="context" type="hidden" value="checkout">
+                                                                <div class="primary">
+                                                                    <button type="submit" class="action action-login secondary"><span data-bind="i18n: 'Sign In'">Login</span></button>
+                                                                </div>
+                                                                <div class="secondary">
+                                                                    <a class="action action-remind" data-bind="attr: { href: forgotPasswordUrl }" href="http://magento2.flytheme.net/themes/sm_zumi/default/customer/account/forgotpassword/">
+                                                                        <span data-bind="i18n: 'Forgot Your Password?'">Forgot Your Password?</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div data-role="focusable-end" tabindex="0"></div>
+                                </aside>
+                            </div>
+                            <!-- /ko -->
+                            <!--/ko-->
+                            <!-- ko foreach: getRegion('progressBar') -->
+                            <!-- ko template: getTemplate() -->
+                            <ul class="opc-progress-bar">
+                                <!-- ko foreach: { data: steps().sort(sortItems), as: 'item' } -->
+                                <li class="opc-progress-bar-item _active" data-bind="css: item.isVisible() ? '_active' : ($parent.isProcessed(item) ? '_complete' : '')">
+                                    <span data-bind="i18n: item.title, click: $parent.navigateTo">Shipping</span>
+                                </li>
+
+                                <li class="opc-progress-bar-item" data-bind="css: item.isVisible() ? '_active' : ($parent.isProcessed(item) ? '_complete' : '')">
+                                    <span data-bind="i18n: item.title, click: $parent.navigateTo">Review &amp; Payments</span>
+                                </li>
+                                <!-- /ko -->
+                            </ul>
+                            <!-- /ko -->
+                            <!--/ko-->
+                            <!-- ko foreach: getRegion('estimation') -->
+                            <!-- ko template: getTemplate() -->
+                            <div class="opc-estimated-wrapper" data-bind="blockLoader: isLoading">
+                                <div class="estimated-block">
+                                    <span class="estimated-label" data-bind="i18n: 'Estimated Total'">Estimated Total</span>
+                                    <span class="estimated-price" data-bind="text: getValue()">$424.80</span>
+                                </div>
+                                <div class="minicart-wrapper">
+                                    <button type="button" class="action showcart" data-bind="click: showSidebar" data-toggle="opc-summary">
+                                        <span class="counter qty">
+                                            <span class="counter-number" data-bind="text: getQuantity()">3</span>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- /ko -->
+                            <!--/ko-->
+                            <!-- ko foreach: getRegion('messages') -->
+                            <!-- ko template: getTemplate() -->
+                            <div data-role="checkout-messages" class="messages" data-bind="visible: isVisible(), click: removeAll">
+                                <!-- ko foreach: messageContainer.getErrorMessages() --><!--/ko-->
+                                <!-- ko foreach: messageContainer.getSuccessMessages() --><!--/ko-->
+                            </div>
+                            <!-- /ko -->
+                            <!--/ko-->
+                            <div class="opc-wrapper">
+                                <ol class="opc" id="checkoutSteps">
+                                    <!-- ko foreach: getRegion('steps') -->
+                                    <!-- ko template: getTemplate() -->
+                                    <!-- ko foreach: {data: elems, as: 'element'} -->
+                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                    <!-- ko foreach: {data: elems, as: 'element'} -->
+                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                    <!-- ko foreach: {data: elems, as: 'element'} --><!-- /ko -->
+                                    <!-- /ko --><!-- /ko -->
+                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                    <li id="shipping" class="checkout-shipping-address" data-bind="fadeVisible: visible()">
+                                        <div class="step-title" data-role="title" data-bind="i18n: 'Shipping Address'">Shipping Address</div>
+                                        <div id="checkout-step-shipping" class="step-content" data-role="content">
+
+                                            <!-- ko if: !quoteIsVirtual --><!-- ko foreach: getRegion('customer-email') --><!-- ko template: getTemplate() -->
+                                            <!-- ko foreach: getRegion('amazon-button-region') --><!-- /ko -->
+                                            <!-- ko ifnot: isCustomerLoggedIn() -->
+                                            <!-- ko foreach: getRegion('before-login-form') -->
+                                            <!-- ko template: getTemplate() -->
+                                            <!-- ko foreach: {data: elems, as: 'element'} --><!-- /ko -->
+                                            <!-- /ko -->
+                                            <!-- /ko -->
+                                            <form class="form form-login" data-role="email-with-possible-login" data-bind="submit:login" method="post" style="display: block;">
+                                                <fieldset id="customer-email-fieldset" class="fieldset" data-bind="blockLoader: isLoading">
+                                                    <div class="field required">
+                                                        <label class="label" for="customer-email">
+                                                            <span data-bind="i18n: 'Email Address'">Email Address</span>
+                                                        </label>
+                                                        <div class="control _with-tooltip">
+                                                            <input class="input-text" type="email" data-bind="
+                            textInput: email,
+                            hasFocus: emailFocused" name="username" data-validate="{required:true, 'validate-email':true}" id="customer-email">
+                                                            <!-- ko template: 'ui/form/element/helper/tooltip' -->
+                                                            <div class="field-tooltip toggle">
+
+                                                                <!-- ko if: (tooltip.link)--><!-- /ko -->
+
+                                                                <span id="tooltip-label" class="label"><!-- ko i18n: 'Tooltip' --><span>Tooltip</span><!-- /ko --></span>
+                                                                <!-- ko if: (!tooltip.link)-->
+                                                                <span id="tooltip" class="field-tooltip-action action-help" tabindex="0" data-toggle="dropdown" data-bind="mageInit: {'dropdown':{'activeClass': '_active', 'parent': '.field-tooltip.toggle'}}" aria-labelledby="tooltip-label" aria-haspopup="true" aria-expanded="false" role="button">
+                                                                </span>
+                                                                <!-- /ko -->
+
+                                                                <div class="field-tooltip-content" data-target="dropdown" data-bind="i18n: tooltip.description" aria-hidden="true">We'll send your order confirmation here.</div>
+                                                            </div>
+                                                            <!-- /ko -->
+                                                            <span class="note" data-bind="fadeVisible: isPasswordVisible() == false"><!-- ko i18n: 'You can create an account after checkout.'--><span>You can create an account after checkout.</span><!-- /ko --></span>
+                                                        </div>
+                                                    </div>
+
+                                                    <!--Hidden fields -->
+                                                    <fieldset class="fieldset hidden-fields" data-bind="fadeVisible: isPasswordVisible" style="display: none;">
+                                                        <div class="field">
+                                                            <label class="label" for="customer-password">
+                                                                <span data-bind="i18n: 'Password'">Password</span>
+                                                            </label>
+                                                            <div class="control">
+                                                                <input class="input-text" placeholder="optional" type="password" name="password" id="customer-password" data-validate="{required:true}" autocomplete="off">
+                                                                <span class="note" data-bind="i18n: 'You already have an account with us. Sign in or continue as guest.'">You already have an account with us. Sign in or continue as guest.</span>
+                                                            </div>
+
+                                                        </div>
+                                                        <!-- ko foreach: getRegion('additional-login-form-fields') -->
+                                                        <!-- ko template: getTemplate() -->
+                                                        <!-- ko foreach: {data: elems, as: 'element'} -->
+                                                        <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                                        <input name="captcha_form_id" type="hidden" data-bind="value: formId,  attr: {'data-scope': dataScope}" value="user_login" data-scope="">
+                                                        <!-- ko if: (isRequired() && getIsVisible())--><!-- /ko -->
+                                                        <!-- /ko --><!-- /ko -->
+                                                        <!-- /ko -->
+                                                        <!-- /ko -->
+                                                        <!-- /ko -->
+                                                        <div class="actions-toolbar">
+                                                            <input name="context" type="hidden" value="checkout">
+                                                            <div class="primary">
+                                                                <button type="submit" class="action login primary" data-action="checkout-method-login"><span data-bind="i18n: 'Login'">Login</span></button>
+                                                            </div>
+                                                            <div class="secondary">
+                                                                <a class="action remind" data-bind="attr: { href: forgotPasswordUrl }" href="http://magento2.flytheme.net/themes/sm_zumi/default/customer/account/forgotpassword/">
+                                                                    <span data-bind="i18n: 'Forgot Your Password?'">Forgot Your Password?</span>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </fieldset>
+                                                    <!--Hidden fields -->
+                                                </fieldset>
+                                            </form>
+                                            <!-- /ko -->
+                                            <!-- /ko --><!-- /ko --><!-- /ko -->
+                                            <!-- ko foreach: getRegion('address-list') --><!-- ko template: getTemplate() -->
+                                            <!-- ko if: (visible)--><!-- /ko -->
+                                            <!-- /ko --><!-- /ko -->
+                                            <!-- ko foreach: getRegion('address-list-additional-addresses') --><!-- ko template: getTemplate() -->
+                                            <!-- ko foreach: {data: elems, as: 'element'} --><!-- /ko -->
+                                            <!-- /ko --><!-- /ko -->
+                                            <!-- Address form pop up -->
+                                            <!-- ko if: !isFormInline --><!-- /ko -->
+                                            <!-- ko foreach: getRegion('before-form') --><!-- ko template: getTemplate() -->
+                                            <!-- ko foreach: {data: elems, as: 'element'} --><!-- /ko -->
+                                            <!-- /ko --><!-- /ko -->
+                                            <!-- Inline address form -->
+                                            <!-- ko if: isFormInline --><!-- ko template: shippingFormTemplate -->
+                                            <form class="form form-shipping-address" id="co-shipping-form" data-bind="attr: {'data-hasrequired': $t('* Required Fields')}" data-hasrequired="* Required Fields" style="display: block;">
+                                                <!-- ko foreach: getRegion('before-fields') -->
+                                                <!-- ko template: getTemplate() -->
+                                                <!-- ko foreach: {data: elems, as: 'element'} --><!-- /ko -->
+                                                <!-- /ko -->
+                                                <!--/ko-->
+                                                <div id="shipping-new-address-form" class="fieldset address">
+                                                    <!-- ko foreach: getRegion('additional-fieldsets') -->
+                                                    <!-- ko template: getTemplate() -->
+                                                    <!-- ko foreach: {data: elems, as: 'element'} -->
+                                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                                    <div class="field _required" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.firstname">
+
+                                                        <label class="label" data-bind="attr: { for: element.uid }" for="QEAJPJE">
+                                                            <!-- ko if: element.label -->
+                                                            <span data-bind="i18n: element.label">First Name</span>
+                                                            <!-- /ko -->
+                                                        </label>
+
+                                                        <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+                                                            <!-- ko ifnot: element.hasAddons() -->
+                                                            <!-- ko template: element.elementTmpl -->
+                                                            <input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="firstname" aria-required="true" aria-invalid="false" id="QEAJPJE">
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: element.hasAddons() --><!-- /ko -->
+                                                            <!-- ko if: element.tooltip --><!-- /ko -->
+                                                            <!-- ko if: element.notice --><!-- /ko -->
+                                                            <!-- ko if: element.error() --><!-- /ko -->
+                                                            <!-- ko if: element.warn() --><!-- /ko -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- /ko -->
+                                                    <!-- /ko --><!-- /ko -->
+                                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                                    <div class="field _required" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.lastname">
+
+                                                        <label class="label" data-bind="attr: { for: element.uid }" for="BROIJKN">
+                                                            <!-- ko if: element.label -->
+                                                            <span data-bind="i18n: element.label">Last Name</span>
+                                                            <!-- /ko -->
+                                                        </label>
+
+                                                        <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+                                                            <!-- ko ifnot: element.hasAddons() -->
+                                                            <!-- ko template: element.elementTmpl -->
+                                                            <input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="lastname" aria-required="true" aria-invalid="false" id="BROIJKN">
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: element.hasAddons() --><!-- /ko -->
+                                                            <!-- ko if: element.tooltip --><!-- /ko -->
+                                                            <!-- ko if: element.notice --><!-- /ko -->
+                                                            <!-- ko if: element.error() --><!-- /ko -->
+                                                            <!-- ko if: element.warn() --><!-- /ko -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- /ko -->
+                                                    <!-- /ko --><!-- /ko -->
+                                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                                    <div class="field" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.company">
+
+                                                        <label class="label" data-bind="attr: { for: element.uid }" for="FGRO1T9">
+                                                            <!-- ko if: element.label -->
+                                                            <span data-bind="i18n: element.label">Company</span>
+                                                            <!-- /ko -->
+                                                        </label>
+
+                                                        <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+                                                            <!-- ko ifnot: element.hasAddons() -->
+                                                            <!-- ko template: element.elementTmpl -->
+                                                            <input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="company" aria-invalid="false" id="FGRO1T9">
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: element.hasAddons() --><!-- /ko -->
+                                                            <!-- ko if: element.tooltip --><!-- /ko -->
+                                                            <!-- ko if: element.notice --><!-- /ko -->
+                                                            <!-- ko if: element.error() --><!-- /ko -->
+                                                            <!-- ko if: element.warn() --><!-- /ko -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- /ko -->
+                                                    <!-- /ko --><!-- /ko -->
+                                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                                    <fieldset class="field street admin__control-fields required" data-bind="css: additionalClasses">
+                                                        <legend class="label">
+                                                            <span data-bind="i18n: element.label">Street Address</span>
+                                                        </legend>
+                                                        <div class="control">
+                                                            <!-- ko foreach: { data: elems, as: 'element' } -->
+                                                            <!-- ko if: element.visible() -->
+                                                            <!-- ko ifnot: (element.input_type == 'checkbox' || element.input_type == 'radio') -->
+                                                            <!-- ko template: $parent.fieldTemplate -->
+                                                            <div class="field _required" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.street.0">
+
+                                                                <label class="label" data-bind="attr: { for: element.uid }" for="JB0NF65">
+                                                                    <!-- ko if: element.label -->
+                                                                    <span data-bind="i18n: element.label">Street Address: Line 1</span>
+                                                                    <!-- /ko -->
+                                                                </label>
+
+                                                                <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+                                                                    <!-- ko ifnot: element.hasAddons() -->
+                                                                    <!-- ko template: element.elementTmpl -->
+                                                                    <input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="street[0]" aria-required="true" aria-invalid="false" id="JB0NF65">
+                                                                    <!-- /ko -->
+                                                                    <!-- /ko -->
+                                                                    <!-- ko if: element.hasAddons() --><!-- /ko -->
+                                                                    <!-- ko if: element.tooltip --><!-- /ko -->
+                                                                    <!-- ko if: element.notice --><!-- /ko -->
+                                                                    <!-- ko if: element.error() --><!-- /ko -->
+                                                                    <!-- ko if: element.warn() --><!-- /ko -->
+                                                                </div>
+                                                            </div>
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: (element.input_type == 'checkbox' || element.input_type == 'radio') --><!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: element.visible() -->
+                                                            <!-- ko ifnot: (element.input_type == 'checkbox' || element.input_type == 'radio') -->
+                                                            <!-- ko template: $parent.fieldTemplate -->
+                                                            <div class="field additional" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.street.1">
+
+                                                                <label class="label" data-bind="attr: { for: element.uid }" for="HM0Q1W7">
+                                                                    <!-- ko if: element.label -->
+                                                                    <span data-bind="i18n: element.label">Street Address: Line 2</span>
+                                                                    <!-- /ko -->
+                                                                </label>
+
+                                                                <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+                                                                    <!-- ko ifnot: element.hasAddons() -->
+                                                                    <!-- ko template: element.elementTmpl -->
+                                                                    <input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="street[1]" aria-invalid="false" id="HM0Q1W7">
+                                                                    <!-- /ko -->
+                                                                    <!-- /ko -->
+                                                                    <!-- ko if: element.hasAddons() --><!-- /ko -->
+                                                                    <!-- ko if: element.tooltip --><!-- /ko -->
+                                                                    <!-- ko if: element.notice --><!-- /ko -->
+                                                                    <!-- ko if: element.error() --><!-- /ko -->
+                                                                    <!-- ko if: element.warn() --><!-- /ko -->
+                                                                </div>
+                                                            </div>
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: (element.input_type == 'checkbox' || element.input_type == 'radio') --><!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: element.visible() -->
+                                                            <!-- ko ifnot: (element.input_type == 'checkbox' || element.input_type == 'radio') -->
+                                                            <!-- ko template: $parent.fieldTemplate -->
+                                                            <div class="field additional" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.street.2">
+
+                                                                <label class="label" data-bind="attr: { for: element.uid }" for="IEHYUCD">
+                                                                    <!-- ko if: element.label -->
+                                                                    <span data-bind="i18n: element.label">Street Address: Line 3</span>
+                                                                    <!-- /ko -->
+                                                                </label>
+
+                                                                <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+                                                                    <!-- ko ifnot: element.hasAddons() -->
+                                                                    <!-- ko template: element.elementTmpl -->
+                                                                    <input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="street[2]" aria-invalid="false" id="IEHYUCD">
+                                                                    <!-- /ko -->
+                                                                    <!-- /ko -->
+                                                                    <!-- ko if: element.hasAddons() --><!-- /ko -->
+                                                                    <!-- ko if: element.tooltip --><!-- /ko -->
+                                                                    <!-- ko if: element.notice --><!-- /ko -->
+                                                                    <!-- ko if: element.error() --><!-- /ko -->
+                                                                    <!-- ko if: element.warn() --><!-- /ko -->
+                                                                </div>
+                                                            </div>
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: (element.input_type == 'checkbox' || element.input_type == 'radio') --><!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: validateWholeGroup --><!-- /ko -->
+                                                        </div>
+                                                    </fieldset>
+                                                    <!-- /ko --><!-- /ko -->
+                                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                                    <div class="field _required" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.city">
+
+                                                        <label class="label" data-bind="attr: { for: element.uid }" for="FKBKERH">
+                                                            <!-- ko if: element.label -->
+                                                            <span data-bind="i18n: element.label">City</span>
+                                                            <!-- /ko -->
+                                                        </label>
+
+                                                        <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+                                                            <!-- ko ifnot: element.hasAddons() -->
+                                                            <!-- ko template: element.elementTmpl -->
+                                                            <input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="city" aria-required="true" aria-invalid="false" id="FKBKERH">
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: element.hasAddons() --><!-- /ko -->
+                                                            <!-- ko if: element.tooltip --><!-- /ko -->
+                                                            <!-- ko if: element.notice --><!-- /ko -->
+                                                            <!-- ko if: element.error() --><!-- /ko -->
+                                                            <!-- ko if: element.warn() --><!-- /ko -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- /ko -->
+                                                    <!-- /ko --><!-- /ko -->
+                                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                                    <div class="field _required" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.region_id">
+
+                                                        <label class="label" data-bind="attr: { for: element.uid }" for="BD162WF">
+                                                            <!-- ko if: element.label -->
+                                                            <span data-bind="i18n: element.label">State/Province</span>
+                                                            <!-- /ko -->
+                                                        </label>
+
+                                                        <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+                                                            <!-- ko ifnot: element.hasAddons() -->
+                                                            <!-- ko template: element.elementTmpl -->
+                                                            <select class="select" data-bind="
+    attr: {
+        name: inputName,
+        id: uid,
+        disabled: disabled,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        placeholder: placeholder
+    },
+    hasFocus: focused,
+    optgroup: options,
+    value: value,
+    optionsCaption: caption,
+    optionsValue: 'value',
+    optionsText: 'label',
+    optionsAfterRender: function(option, item) {
+        if (item &amp;&amp; item.disabled) {
+            ko.applyBindingsToNode(option, {attr: {disabled: true}}, item);
+        }
+    }" name="region_id" id="BD162WF" aria-required="true" aria-invalid="false">
+                                                                <option value="">Please select a region, state or province.</option>
+                                                                <option data-title="Alabama" value="1">Alabama</option>
+                                                                <option data-title="Alaska" value="2">Alaska</option>
+                                                                <option data-title="American Samoa" value="3">American Samoa</option>
+                                                                <option data-title="Arizona" value="4">Arizona</option>
+                                                                <option data-title="Arkansas" value="5">Arkansas</option>
+                                                                <option data-title="Armed Forces Africa" value="6">Armed Forces Africa</option>
+                                                                <option data-title="Armed Forces Americas" value="7">Armed Forces Americas</option>
+                                                                <option data-title="Armed Forces Canada" value="8">Armed Forces Canada</option>
+                                                                <option data-title="Armed Forces Europe" value="9">Armed Forces Europe</option>
+                                                                <option data-title="Armed Forces Middle East" value="10">Armed Forces Middle East</option>
+                                                                <option data-title="Armed Forces Pacific" value="11">Armed Forces Pacific</option>
+                                                                <option data-title="California" value="12">California</option>
+                                                                <option data-title="Colorado" value="13">Colorado</option>
+                                                                <option data-title="Connecticut" value="14">Connecticut</option>
+                                                                <option data-title="Delaware" value="15">Delaware</option>
+                                                                <option data-title="District of Columbia" value="16">District of Columbia</option>
+                                                                <option data-title="Federated States Of Micronesia" value="17">Federated States Of Micronesia</option>
+                                                                <option data-title="Florida" value="18">Florida</option>
+                                                                <option data-title="Georgia" value="19">Georgia</option>
+                                                                <option data-title="Guam" value="20">Guam</option>
+                                                                <option data-title="Hawaii" value="21">Hawaii</option>
+                                                                <option data-title="Idaho" value="22">Idaho</option>
+                                                                <option data-title="Illinois" value="23">Illinois</option>
+                                                                <option data-title="Indiana" value="24">Indiana</option>
+                                                                <option data-title="Iowa" value="25">Iowa</option>
+                                                                <option data-title="Kansas" value="26">Kansas</option>
+                                                                <option data-title="Kentucky" value="27">Kentucky</option>
+                                                                <option data-title="Louisiana" value="28">Louisiana</option>
+                                                                <option data-title="Maine" value="29">Maine</option>
+                                                                <option data-title="Marshall Islands" value="30">Marshall Islands</option>
+                                                                <option data-title="Maryland" value="31">Maryland</option>
+                                                                <option data-title="Massachusetts" value="32">Massachusetts</option>
+                                                                <option data-title="Michigan" value="33">Michigan</option>
+                                                                <option data-title="Minnesota" value="34">Minnesota</option>
+                                                                <option data-title="Mississippi" value="35">Mississippi</option>
+                                                                <option data-title="Missouri" value="36">Missouri</option>
+                                                                <option data-title="Montana" value="37">Montana</option>
+                                                                <option data-title="Nebraska" value="38">Nebraska</option>
+                                                                <option data-title="Nevada" value="39">Nevada</option>
+                                                                <option data-title="New Hampshire" value="40">New Hampshire</option>
+                                                                <option data-title="New Jersey" value="41">New Jersey</option>
+                                                                <option data-title="New Mexico" value="42">New Mexico</option>
+                                                                <option data-title="New York" value="43">New York</option>
+                                                                <option data-title="North Carolina" value="44">North Carolina</option>
+                                                                <option data-title="North Dakota" value="45">North Dakota</option>
+                                                                <option data-title="Northern Mariana Islands" value="46">Northern Mariana Islands</option>
+                                                                <option data-title="Ohio" value="47">Ohio</option>
+                                                                <option data-title="Oklahoma" value="48">Oklahoma</option>
+                                                                <option data-title="Oregon" value="49">Oregon</option>
+                                                                <option data-title="Palau" value="50">Palau</option>
+                                                                <option data-title="Pennsylvania" value="51">Pennsylvania</option>
+                                                                <option data-title="Puerto Rico" value="52">Puerto Rico</option>
+                                                                <option data-title="Rhode Island" value="53">Rhode Island</option>
+                                                                <option data-title="South Carolina" value="54">South Carolina</option>
+                                                                <option data-title="South Dakota" value="55">South Dakota</option>
+                                                                <option data-title="Tennessee" value="56">Tennessee</option>
+                                                                <option data-title="Texas" value="57">Texas</option>
+                                                                <option data-title="Utah" value="58">Utah</option>
+                                                                <option data-title="Vermont" value="59">Vermont</option>
+                                                                <option data-title="Virgin Islands" value="60">Virgin Islands</option>
+                                                                <option data-title="Virginia" value="61">Virginia</option>
+                                                                <option data-title="Washington" value="62">Washington</option>
+                                                                <option data-title="West Virginia" value="63">West Virginia</option>
+                                                                <option data-title="Wisconsin" value="64">Wisconsin</option>
+                                                                <option data-title="Wyoming" value="65">Wyoming</option>
+                                                            </select>
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: element.hasAddons() --><!-- /ko -->
+                                                            <!-- ko if: element.tooltip --><!-- /ko -->
+                                                            <!-- ko if: element.notice --><!-- /ko -->
+                                                            <!-- ko if: element.error() --><!-- /ko -->
+                                                            <!-- ko if: element.warn() --><!-- /ko -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- /ko -->
+                                                    <!-- /ko --><!-- /ko -->
+                                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                                    <div class="field _required" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.region" style="display: none;">
+
+                                                        <label class="label" data-bind="attr: { for: element.uid }" for="KDLPRGF">
+                                                            <!-- ko if: element.label -->
+                                                            <span data-bind="i18n: element.label">State/Province</span>
+                                                            <!-- /ko -->
+                                                        </label>
+
+                                                        <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+                                                            <!-- ko ifnot: element.hasAddons() -->
+                                                            <!-- ko template: element.elementTmpl -->
+                                                            <input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="region" aria-required="true" aria-invalid="false" id="KDLPRGF">
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: element.hasAddons() --><!-- /ko -->
+                                                            <!-- ko if: element.tooltip --><!-- /ko -->
+                                                            <!-- ko if: element.notice --><!-- /ko -->
+                                                            <!-- ko if: element.error() --><!-- /ko -->
+                                                            <!-- ko if: element.warn() --><!-- /ko -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- /ko -->
+                                                    <!-- /ko --><!-- /ko -->
+                                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                                    <div class="field _required" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.postcode">
+
+                                                        <label class="label" data-bind="attr: { for: element.uid }" for="M7RLUUX">
+                                                            <!-- ko if: element.label -->
+                                                            <span data-bind="i18n: element.label">Zip/Postal Code</span>
+                                                            <!-- /ko -->
+                                                        </label>
+
+                                                        <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+                                                            <!-- ko ifnot: element.hasAddons() -->
+                                                            <!-- ko template: element.elementTmpl -->
+                                                            <input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="postcode" aria-required="true" aria-invalid="false" id="M7RLUUX">
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: element.hasAddons() --><!-- /ko -->
+                                                            <!-- ko if: element.tooltip --><!-- /ko -->
+                                                            <!-- ko if: element.notice --><!-- /ko -->
+                                                            <!-- ko if: element.error() --><!-- /ko -->
+                                                            <!-- ko if: element.warn() --><!-- /ko -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- /ko -->
+                                                    <!-- /ko --><!-- /ko -->
+                                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                                    <div class="field _required" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.country_id">
+
+                                                        <label class="label" data-bind="attr: { for: element.uid }" for="YAMS615">
+                                                            <!-- ko if: element.label -->
+                                                            <span data-bind="i18n: element.label">Country</span>
+                                                            <!-- /ko -->
+                                                        </label>
+
+                                                        <div class="control" data-bind="css: {'_with-tooltip': element.tooltip}">
+                                                            <!-- ko ifnot: element.hasAddons() -->
+                                                            <!-- ko template: element.elementTmpl -->
+                                                            <select class="select" data-bind="
+    attr: {
+        name: inputName,
+        id: uid,
+        disabled: disabled,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        placeholder: placeholder
+    },
+    hasFocus: focused,
+    optgroup: options,
+    value: value,
+    optionsCaption: caption,
+    optionsValue: 'value',
+    optionsText: 'label',
+    optionsAfterRender: function(option, item) {
+        if (item &amp;&amp; item.disabled) {
+            ko.applyBindingsToNode(option, {attr: {disabled: true}}, item);
+        }
+    }" name="country_id" id="YAMS615" aria-required="true" aria-invalid="false">
+                                                                <option value=""> </option>
+                                                                <option data-title="Afghanistan" value="AF">Afghanistan</option>
+                                                                <option data-title="Åland Islands" value="AX">Åland Islands</option>
+                                                                <option data-title="Albania" value="AL">Albania</option>
+                                                                <option data-title="Algeria" value="DZ">Algeria</option>
+                                                                <option data-title="American Samoa" value="AS">American Samoa</option>
+                                                                <option data-title="Andorra" value="AD">Andorra</option>
+                                                                <option data-title="Angola" value="AO">Angola</option>
+                                                                <option data-title="Anguilla" value="AI">Anguilla</option>
+                                                                <option data-title="Antarctica" value="AQ">Antarctica</option>
+                                                                <option data-title="Antigua &amp; Barbuda" value="AG">Antigua &amp; Barbuda</option>
+                                                                <option data-title="Argentina" value="AR">Argentina</option>
+                                                                <option data-title="Armenia" value="AM">Armenia</option>
+                                                                <option data-title="Aruba" value="AW">Aruba</option>
+                                                                <option data-title="Australia" value="AU">Australia</option>
+                                                                <option data-title="Austria" value="AT">Austria</option>
+                                                                <option data-title="Azerbaijan" value="AZ">Azerbaijan</option>
+                                                                <option data-title="Bahamas" value="BS">Bahamas</option>
+                                                                <option data-title="Bahrain" value="BH">Bahrain</option>
+                                                                <option data-title="Bangladesh" value="BD">Bangladesh</option>
+                                                                <option data-title="Barbados" value="BB">Barbados</option>
+                                                                <option data-title="Belarus" value="BY">Belarus</option>
+                                                                <option data-title="Belgium" value="BE">Belgium</option>
+                                                                <option data-title="Belize" value="BZ">Belize</option>
+                                                                <option data-title="Benin" value="BJ">Benin</option>
+                                                                <option data-title="Bermuda" value="BM">Bermuda</option>
+                                                                <option data-title="Bhutan" value="BT">Bhutan</option>
+                                                                <option data-title="Bolivia" value="BO">Bolivia</option>
+                                                                <option data-title="Bosnia &amp; Herzegovina" value="BA">Bosnia &amp; Herzegovina</option>
+                                                                <option data-title="Botswana" value="BW">Botswana</option>
+                                                                <option data-title="Bouvet Island" value="BV">Bouvet Island</option>
+                                                                <option data-title="Brazil" value="BR">Brazil</option>
+                                                                <option data-title="British Indian Ocean Territory" value="IO">British Indian Ocean Territory</option>
+                                                                <option data-title="British Virgin Islands" value="VG">British Virgin Islands</option>
+                                                                <option data-title="Brunei" value="BN">Brunei</option>
+                                                                <option data-title="Bulgaria" value="BG">Bulgaria</option>
+                                                                <option data-title="Burkina Faso" value="BF">Burkina Faso</option>
+                                                                <option data-title="Burundi" value="BI">Burundi</option>
+                                                                <option data-title="Cambodia" value="KH">Cambodia</option>
+                                                                <option data-title="Cameroon" value="CM">Cameroon</option>
+                                                                <option data-title="Canada" value="CA">Canada</option>
+                                                                <option data-title="Cape Verde" value="CV">Cape Verde</option>
+                                                                <option data-title="Caribbean Netherlands" value="BQ">Caribbean Netherlands</option>
+                                                                <option data-title="Cayman Islands" value="KY">Cayman Islands</option>
+                                                                <option data-title="Central African Republic" value="CF">Central African Republic</option>
+                                                                <option data-title="Chad" value="TD">Chad</option>
+                                                                <option data-title="Chile" value="CL">Chile</option>
+                                                                <option data-title="China" value="CN">China</option>
+                                                                <option data-title="Christmas Island" value="CX">Christmas Island</option>
+                                                                <option data-title="Cocos (Keeling) Islands" value="CC">Cocos (Keeling) Islands</option>
+                                                                <option data-title="Colombia" value="CO">Colombia</option>
+                                                                <option data-title="Comoros" value="KM">Comoros</option>
+                                                                <option data-title="Congo - Brazzaville" value="CG">Congo - Brazzaville</option>
+                                                                <option data-title="Congo - Kinshasa" value="CD">Congo - Kinshasa</option>
+                                                                <option data-title="Cook Islands" value="CK">Cook Islands</option>
+                                                                <option data-title="Costa Rica" value="CR">Costa Rica</option>
+                                                                <option data-title="Côte d’Ivoire" value="CI">Côte d’Ivoire</option>
+                                                                <option data-title="Croatia" value="HR">Croatia</option>
+                                                                <option data-title="Cuba" value="CU">Cuba</option>
+                                                                <option data-title="Curaçao" value="CW">Curaçao</option>
+                                                                <option data-title="Cyprus" value="CY">Cyprus</option>
+                                                                <option data-title="Czechia" value="CZ">Czechia</option>
+                                                                <option data-title="Denmark" value="DK">Denmark</option>
+                                                                <option data-title="Djibouti" value="DJ">Djibouti</option>
+                                                                <option data-title="Dominica" value="DM">Dominica</option>
+                                                                <option data-title="Dominican Republic" value="DO">Dominican Republic</option>
+                                                                <option data-title="Ecuador" value="EC">Ecuador</option>
+                                                                <option data-title="Egypt" value="EG">Egypt</option>
+                                                                <option data-title="El Salvador" value="SV">El Salvador</option>
+                                                                <option data-title="Equatorial Guinea" value="GQ">Equatorial Guinea</option>
+                                                                <option data-title="Eritrea" value="ER">Eritrea</option>
+                                                                <option data-title="Estonia" value="EE">Estonia</option>
+                                                                <option data-title="Ethiopia" value="ET">Ethiopia</option>
+                                                                <option data-title="Falkland Islands" value="FK">Falkland Islands</option>
+                                                                <option data-title="Faroe Islands" value="FO">Faroe Islands</option>
+                                                                <option data-title="Fiji" value="FJ">Fiji</option>
+                                                                <option data-title="Finland" value="FI">Finland</option>
+                                                                <option data-title="France" value="FR">France</option>
+                                                                <option data-title="French Guiana" value="GF">French Guiana</option>
+                                                                <option data-title="French Polynesia" value="PF">French Polynesia</option>
+                                                                <option data-title="French Southern Territories" value="TF">French Southern Territories</option>
+                                                                <option data-title="Gabon" value="GA">Gabon</option>
+                                                                <option data-title="Gambia" value="GM">Gambia</option>
+                                                                <option data-title="Georgia" value="GE">Georgia</option>
+                                                                <option data-title="Germany" value="DE">Germany</option>
+                                                                <option data-title="Ghana" value="GH">Ghana</option>
+                                                                <option data-title="Gibraltar" value="GI">Gibraltar</option>
+                                                                <option data-title="Greece" value="GR">Greece</option>
+                                                                <option data-title="Greenland" value="GL">Greenland</option>
+                                                                <option data-title="Grenada" value="GD">Grenada</option>
+                                                                <option data-title="Guadeloupe" value="GP">Guadeloupe</option>
+                                                                <option data-title="Guam" value="GU">Guam</option>
+                                                                <option data-title="Guatemala" value="GT">Guatemala</option>
+                                                                <option data-title="Guernsey" value="GG">Guernsey</option>
+                                                                <option data-title="Guinea" value="GN">Guinea</option>
+                                                                <option data-title="Guinea-Bissau" value="GW">Guinea-Bissau</option>
+                                                                <option data-title="Guyana" value="GY">Guyana</option>
+                                                                <option data-title="Haiti" value="HT">Haiti</option>
+                                                                <option data-title="Heard &amp; McDonald Islands" value="HM">Heard &amp; McDonald Islands</option>
+                                                                <option data-title="Honduras" value="HN">Honduras</option>
+                                                                <option data-title="Hong Kong SAR China" value="HK">Hong Kong SAR China</option>
+                                                                <option data-title="Hungary" value="HU">Hungary</option>
+                                                                <option data-title="Iceland" value="IS">Iceland</option>
+                                                                <option data-title="India" value="IN">India</option>
+                                                                <option data-title="Indonesia" value="ID">Indonesia</option>
+                                                                <option data-title="Iran" value="IR">Iran</option>
+                                                                <option data-title="Iraq" value="IQ">Iraq</option>
+                                                                <option data-title="Ireland" value="IE">Ireland</option>
+                                                                <option data-title="Isle of Man" value="IM">Isle of Man</option>
+                                                                <option data-title="Israel" value="IL">Israel</option>
+                                                                <option data-title="Italy" value="IT">Italy</option>
+                                                                <option data-title="Jamaica" value="JM">Jamaica</option>
+                                                                <option data-title="Japan" value="JP">Japan</option>
+                                                                <option data-title="Jersey" value="JE">Jersey</option>
+                                                                <option data-title="Jordan" value="JO">Jordan</option>
+                                                                <option data-title="Kazakhstan" value="KZ">Kazakhstan</option>
+                                                                <option data-title="Kenya" value="KE">Kenya</option>
+                                                                <option data-title="Kiribati" value="KI">Kiribati</option>
+                                                                <option data-title="Kosovo" value="XK">Kosovo</option>
+                                                                <option data-title="Kuwait" value="KW">Kuwait</option>
+                                                                <option data-title="Kyrgyzstan" value="KG">Kyrgyzstan</option>
+                                                                <option data-title="Laos" value="LA">Laos</option>
+                                                                <option data-title="Latvia" value="LV">Latvia</option>
+                                                                <option data-title="Lebanon" value="LB">Lebanon</option>
+                                                                <option data-title="Lesotho" value="LS">Lesotho</option>
+                                                                <option data-title="Liberia" value="LR">Liberia</option>
+                                                                <option data-title="Libya" value="LY">Libya</option>
+                                                                <option data-title="Liechtenstein" value="LI">Liechtenstein</option>
+                                                                <option data-title="Lithuania" value="LT">Lithuania</option>
+                                                                <option data-title="Luxembourg" value="LU">Luxembourg</option>
+                                                                <option data-title="Macau SAR China" value="MO">Macau SAR China</option>
+                                                                <option data-title="Macedonia" value="MK">Macedonia</option>
+                                                                <option data-title="Madagascar" value="MG">Madagascar</option>
+                                                                <option data-title="Malawi" value="MW">Malawi</option>
+                                                                <option data-title="Malaysia" value="MY">Malaysia</option>
+                                                                <option data-title="Maldives" value="MV">Maldives</option>
+                                                                <option data-title="Mali" value="ML">Mali</option>
+                                                                <option data-title="Malta" value="MT">Malta</option>
+                                                                <option data-title="Marshall Islands" value="MH">Marshall Islands</option>
+                                                                <option data-title="Martinique" value="MQ">Martinique</option>
+                                                                <option data-title="Mauritania" value="MR">Mauritania</option>
+                                                                <option data-title="Mauritius" value="MU">Mauritius</option>
+                                                                <option data-title="Mayotte" value="YT">Mayotte</option>
+                                                                <option data-title="Mexico" value="MX">Mexico</option>
+                                                                <option data-title="Micronesia" value="FM">Micronesia</option>
+                                                                <option data-title="Moldova" value="MD">Moldova</option>
+                                                                <option data-title="Monaco" value="MC">Monaco</option>
+                                                                <option data-title="Mongolia" value="MN">Mongolia</option>
+                                                                <option data-title="Montenegro" value="ME">Montenegro</option>
+                                                                <option data-title="Montserrat" value="MS">Montserrat</option>
+                                                                <option data-title="Morocco" value="MA">Morocco</option>
+                                                                <option data-title="Mozambique" value="MZ">Mozambique</option>
+                                                                <option data-title="Myanmar (Burma)" value="MM">Myanmar (Burma)</option>
+                                                                <option data-title="Namibia" value="NA">Namibia</option>
+                                                                <option data-title="Nauru" value="NR">Nauru</option>
+                                                                <option data-title="Nepal" value="NP">Nepal</option>
+                                                                <option data-title="Netherlands" value="NL">Netherlands</option>
+                                                                <option data-title="New Caledonia" value="NC">New Caledonia</option>
+                                                                <option data-title="New Zealand" value="NZ">New Zealand</option>
+                                                                <option data-title="Nicaragua" value="NI">Nicaragua</option>
+                                                                <option data-title="Niger" value="NE">Niger</option>
+                                                                <option data-title="Nigeria" value="NG">Nigeria</option>
+                                                                <option data-title="Niue" value="NU">Niue</option>
+                                                                <option data-title="Norfolk Island" value="NF">Norfolk Island</option>
+                                                                <option data-title="Northern Mariana Islands" value="MP">Northern Mariana Islands</option>
+                                                                <option data-title="North Korea" value="KP">North Korea</option>
+                                                                <option data-title="Norway" value="NO">Norway</option>
+                                                                <option data-title="Oman" value="OM">Oman</option>
+                                                                <option data-title="Pakistan" value="PK">Pakistan</option>
+                                                                <option data-title="Palau" value="PW">Palau</option>
+                                                                <option data-title="Palestinian Territories" value="PS">Palestinian Territories</option>
+                                                                <option data-title="Panama" value="PA">Panama</option>
+                                                                <option data-title="Papua New Guinea" value="PG">Papua New Guinea</option>
+                                                                <option data-title="Paraguay" value="PY">Paraguay</option>
+                                                                <option data-title="Peru" value="PE">Peru</option>
+                                                                <option data-title="Philippines" value="PH">Philippines</option>
+                                                                <option data-title="Pitcairn Islands" value="PN">Pitcairn Islands</option>
+                                                                <option data-title="Poland" value="PL">Poland</option>
+                                                                <option data-title="Portugal" value="PT">Portugal</option>
+                                                                <option data-title="Qatar" value="QA">Qatar</option>
+                                                                <option data-title="Réunion" value="RE">Réunion</option>
+                                                                <option data-title="Romania" value="RO">Romania</option>
+                                                                <option data-title="Russia" value="RU">Russia</option>
+                                                                <option data-title="Rwanda" value="RW">Rwanda</option>
+                                                                <option data-title="Samoa" value="WS">Samoa</option>
+                                                                <option data-title="San Marino" value="SM">San Marino</option>
+                                                                <option data-title="São Tomé &amp; Príncipe" value="ST">São Tomé &amp; Príncipe</option>
+                                                                <option data-title="Saudi Arabia" value="SA">Saudi Arabia</option>
+                                                                <option data-title="Senegal" value="SN">Senegal</option>
+                                                                <option data-title="Serbia" value="RS">Serbia</option>
+                                                                <option data-title="Seychelles" value="SC">Seychelles</option>
+                                                                <option data-title="Sierra Leone" value="SL">Sierra Leone</option>
+                                                                <option data-title="Singapore" value="SG">Singapore</option>
+                                                                <option data-title="Sint Maarten" value="SX">Sint Maarten</option>
+                                                                <option data-title="Slovakia" value="SK">Slovakia</option>
+                                                                <option data-title="Slovenia" value="SI">Slovenia</option>
+                                                                <option data-title="Solomon Islands" value="SB">Solomon Islands</option>
+                                                                <option data-title="Somalia" value="SO">Somalia</option>
+                                                                <option data-title="South Africa" value="ZA">South Africa</option>
+                                                                <option data-title="South Georgia &amp; South Sandwich Islands" value="GS">South Georgia &amp; South Sandwich Islands</option>
+                                                                <option data-title="South Korea" value="KR">South Korea</option>
+                                                                <option data-title="Spain" value="ES">Spain</option>
+                                                                <option data-title="Sri Lanka" value="LK">Sri Lanka</option>
+                                                                <option data-title="St. Barthélemy" value="BL">St. Barthélemy</option>
+                                                                <option data-title="St. Helena" value="SH">St. Helena</option>
+                                                                <option data-title="St. Kitts &amp; Nevis" value="KN">St. Kitts &amp; Nevis</option>
+                                                                <option data-title="St. Lucia" value="LC">St. Lucia</option>
+                                                                <option data-title="St. Martin" value="MF">St. Martin</option>
+                                                                <option data-title="St. Pierre &amp; Miquelon" value="PM">St. Pierre &amp; Miquelon</option>
+                                                                <option data-title="St. Vincent &amp; Grenadines" value="VC">St. Vincent &amp; Grenadines</option>
+                                                                <option data-title="Sudan" value="SD">Sudan</option>
+                                                                <option data-title="Suriname" value="SR">Suriname</option>
+                                                                <option data-title="Svalbard &amp; Jan Mayen" value="SJ">Svalbard &amp; Jan Mayen</option>
+                                                                <option data-title="Swaziland" value="SZ">Swaziland</option>
+                                                                <option data-title="Sweden" value="SE">Sweden</option>
+                                                                <option data-title="Switzerland" value="CH">Switzerland</option>
+                                                                <option data-title="Syria" value="SY">Syria</option>
+                                                                <option data-title="Taiwan, Province of China" value="TW">Taiwan, Province of China</option>
+                                                                <option data-title="Tajikistan" value="TJ">Tajikistan</option>
+                                                                <option data-title="Tanzania" value="TZ">Tanzania</option>
+                                                                <option data-title="Thailand" value="TH">Thailand</option>
+                                                                <option data-title="Timor-Leste" value="TL">Timor-Leste</option>
+                                                                <option data-title="Togo" value="TG">Togo</option>
+                                                                <option data-title="Tokelau" value="TK">Tokelau</option>
+                                                                <option data-title="Tonga" value="TO">Tonga</option>
+                                                                <option data-title="Trinidad &amp; Tobago" value="TT">Trinidad &amp; Tobago</option>
+                                                                <option data-title="Tunisia" value="TN">Tunisia</option>
+                                                                <option data-title="Turkey" value="TR">Turkey</option>
+                                                                <option data-title="Turkmenistan" value="TM">Turkmenistan</option>
+                                                                <option data-title="Turks &amp; Caicos Islands" value="TC">Turks &amp; Caicos Islands</option>
+                                                                <option data-title="Tuvalu" value="TV">Tuvalu</option>
+                                                                <option data-title="Uganda" value="UG">Uganda</option>
+                                                                <option data-title="Ukraine" value="UA">Ukraine</option>
+                                                                <option data-title="United Arab Emirates" value="AE">United Arab Emirates</option>
+                                                                <option data-title="United Kingdom" value="GB">United Kingdom</option>
+                                                                <option data-title="United States" value="US">United States</option>
+                                                                <option data-title="Uruguay" value="UY">Uruguay</option>
+                                                                <option data-title="U.S. Outlying Islands" value="UM">U.S. Outlying Islands</option>
+                                                                <option data-title="U.S. Virgin Islands" value="VI">U.S. Virgin Islands</option>
+                                                                <option data-title="Uzbekistan" value="UZ">Uzbekistan</option>
+                                                                <option data-title="Vanuatu" value="VU">Vanuatu</option>
+                                                                <option data-title="Vatican City" value="VA">Vatican City</option>
+                                                                <option data-title="Venezuela" value="VE">Venezuela</option>
+                                                                <option data-title="Vietnam" value="VN">Vietnam</option>
+                                                                <option data-title="Wallis &amp; Futuna" value="WF">Wallis &amp; Futuna</option>
+                                                                <option data-title="Western Sahara" value="EH">Western Sahara</option>
+                                                                <option data-title="Yemen" value="YE">Yemen</option>
+                                                                <option data-title="Zambia" value="ZM">Zambia</option>
+                                                                <option data-title="Zimbabwe" value="ZW">Zimbabwe</option>
+                                                            </select>
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: element.hasAddons() --><!-- /ko -->
+                                                            <!-- ko if: element.tooltip --><!-- /ko -->
+                                                            <!-- ko if: element.notice --><!-- /ko -->
+                                                            <!-- ko if: element.error() --><!-- /ko -->
+                                                            <!-- ko if: element.warn() --><!-- /ko -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- /ko -->
+                                                    <!-- /ko --><!-- /ko -->
+                                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                                    <div class="field _required" data-bind="visible: visible, attr: {'name': element.dataScope}, css: additionalClasses" name="shippingAddress.telephone">
+
+                                                        <label class="label" data-bind="attr: { for: element.uid }" for="MLN3HQR">
+                                                            <!-- ko if: element.label -->
+                                                            <span data-bind="i18n: element.label">Phone Number</span>
+                                                            <!-- /ko -->
+                                                        </label>
+
+                                                        <div class="control _with-tooltip" data-bind="css: {'_with-tooltip': element.tooltip}">
+                                                            <!-- ko ifnot: element.hasAddons() -->
+                                                            <!-- ko template: element.elementTmpl -->
+                                                            <input class="input-text" type="text" data-bind="
+    value: value,
+    valueUpdate: 'keyup',
+    hasFocus: focused,
+    attr: {
+        name: inputName,
+        placeholder: placeholder,
+        'aria-describedby': getDescriptionId(),
+        'aria-required': required,
+        'aria-invalid': error() ? true : 'false',
+        id: uid,
+        disabled: disabled
+    }" name="telephone" aria-required="true" aria-invalid="false" id="MLN3HQR">
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: element.hasAddons() --><!-- /ko -->
+                                                            <!-- ko if: element.tooltip -->
+                                                            <!-- ko template: element.tooltipTpl -->
+                                                            <div class="field-tooltip toggle">
+
+                                                                <!-- ko if: (tooltip.link)--><!-- /ko -->
+
+                                                                <span id="tooltip-label" class="label"><!-- ko i18n: 'Tooltip' --><span>Tooltip</span><!-- /ko --></span>
+                                                                <!-- ko if: (!tooltip.link)-->
+                                                                <span id="tooltip" class="field-tooltip-action action-help" tabindex="0" data-toggle="dropdown" data-bind="mageInit: {'dropdown':{'activeClass': '_active', 'parent': '.field-tooltip.toggle'}}" aria-labelledby="tooltip-label" aria-haspopup="true" aria-expanded="false" role="button">
+                                                                </span>
+                                                                <!-- /ko -->
+
+                                                                <div class="field-tooltip-content" data-target="dropdown" data-bind="i18n: tooltip.description" aria-hidden="true">For delivery questions.</div>
+                                                            </div>
+                                                            <!-- /ko -->
+                                                            <!-- /ko -->
+                                                            <!-- ko if: element.notice --><!-- /ko -->
+                                                            <!-- ko if: element.error() --><!-- /ko -->
+                                                            <!-- ko if: element.warn() --><!-- /ko -->
+                                                        </div>
+                                                    </div>
+                                                    <!-- /ko -->
+                                                    <!-- /ko --><!-- /ko -->
+                                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() --><div data-bind="afterRender: manipulateInlineForm"></div>
+                                                    <!-- /ko --><!-- /ko -->
+                                                    <!-- /ko -->
+                                                    <!-- /ko -->
+                                                    <!--/ko-->
+                                                    <!-- ko if: (isCustomerLoggedIn) --><!-- /ko -->
+                                                </div>
+                                            </form>
+                                            <!-- /ko --><!-- /ko -->
+                                        </div>
+                                    </li>
+
+                                    <!--Shipping method template-->
+                                    <li id="opc-shipping_method" class="checkout-shipping-method" data-bind="fadeVisible: visible(), blockLoader: isLoading" role="presentation">
+                                        <div class="checkout-shipping-method">
+                                            <div class="step-title" data-role="title" data-bind="i18n: 'Shipping Methods'">Shipping Methods</div>
+
+                                            <!-- ko foreach: getRegion('before-shipping-method-form') --><!-- ko template: getTemplate() -->
+                                            <!-- ko foreach: {data: elems, as: 'element'} -->
+                                            <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                            <div class="shipping-policy-block field-tooltip" data-bind="visible: config.isEnabled" style="display: none;">
+                                                <span class="field-tooltip-action" tabindex="0" data-toggle="dropdown" data-bind="mageInit: {'dropdown':{'activeClass': '_active'}}" aria-haspopup="true" aria-expanded="false" role="button">
+                                                    <!-- ko i18n: 'See our Shipping Policy' --><span>See our Shipping Policy</span><!-- /ko -->
+                                                </span>
+                                                <div class="field-tooltip-content" data-target="dropdown" aria-hidden="true">
+                                                    <span data-bind="html: config.shippingPolicyContent"></span>
+                                                </div>
+                                            </div>
+                                            <!-- /ko --><!-- /ko -->
+                                            <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                            <!-- ko foreach: {data: elems, as: 'element'} -->
+                                            <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                            <!-- ko if: hasMessage --><!-- /ko -->
+                                            <!-- /ko --><!-- /ko -->
+                                            <!-- /ko -->
+                                            <!-- /ko --><!-- /ko -->
+                                            <!-- /ko -->
+                                            <!-- /ko --><!-- /ko -->
+
+                                            <div id="checkout-step-shipping_method" class="step-content" data-role="content" role="tabpanel" aria-hidden="false">
+                                                <!-- ko if: rates().length --><form id="co-shipping-method-form" class="form methods-shipping" novalidate="novalidate" data-bind="submit: setShippingInformation">
+
+                                                    <!-- ko template: shippingMethodListTemplate -->
+                                                    <div id="checkout-shipping-method-load">
+                                                        <table class="table-checkout-shipping-method">
+                                                            <thead>
+                                                                <tr class="row">
+                                                                    <th class="col col-method" data-bind="i18n: 'Select Method'">Select Method</th>
+                                                                    <th class="col col-price" data-bind="i18n: 'Price'">Price</th>
+                                                                    <th class="col col-method" data-bind="i18n: 'Method Title'">Method Title</th>
+                                                                    <th class="col col-carrier" data-bind="i18n: 'Carrier Title'">Carrier Title</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <!-- ko foreach: { data: rates(), as: 'method'} -->
+                                                                <!--ko template: { name: element.shippingMethodItemTemplate} -->
+                                                                <tr class="row" data-bind="click: element.selectShippingMethod">
+                                                                    <td class="col col-method">
+                                                                        <!-- ko ifnot: method.error_message --><input type="radio" class="radio" data-bind="attr: {'aria-labelledby': 'label_method_' + method.method_code + '_' + method.carrier_code + ' ' + 'label_carrier_' + method.method_code + '_' + method.carrier_code,
+                    'checked': element.rates().length == 1 || element.isSelected}, value: method.carrier_code + '_' + method.method_code, checked: element.isSelected" aria-labelledby="label_method_bestway_tablerate label_carrier_bestway_tablerate" value="tablerate_bestway" name="ko_unique_1"><!-- /ko -->
+                                                                    </td>
+                                                                    <td class="col col-price">
+                                                                        <!-- ko foreach: element.getRegion('price') --><!-- ko template: getTemplate() -->
+                                                                        <!-- ko if:  isDisplayShippingPriceExclTax -->
+                                                                        <span class="price"><span class="price" data-bind="text: getFormattedPrice(method.price_excl_tax)">$0.00</span></span>
+                                                                        <!-- /ko -->
+                                                                        <!-- ko ifnot: isDisplayShippingPriceExclTax --><!-- /ko -->
+                                                                        <!-- ko if:  (isDisplayShippingBothPrices && (method.price_excl_tax != method.price_incl_tax))--><!-- /ko -->
+                                                                        <!-- /ko --><!-- /ko -->
+                                                                    </td>
+                                                                    <td class="col col-method" data-bind="attr: {'id': 'label_method_' + method.method_code + '_' + method.carrier_code}, text: method.method_title" id="label_method_bestway_tablerate">Table Rate</td>
+                                                                    <td class="col col-carrier" data-bind="attr: {'id': 'label_carrier_' + method.method_code + '_' + method.carrier_code}, text: method.carrier_title" id="label_carrier_bestway_tablerate">Best Way</td>
+                                                                </tr>
+                                                                <!-- ko if: method.error_message --><!-- /ko -->
+                                                                <!-- /ko -->
+                                                                <!--ko template: { name: element.shippingMethodItemTemplate} -->
+                                                                <tr class="row" data-bind="click: element.selectShippingMethod">
+                                                                    <td class="col col-method">
+                                                                        <!-- ko ifnot: method.error_message --><input type="radio" class="radio" data-bind="attr: {'aria-labelledby': 'label_method_' + method.method_code + '_' + method.carrier_code + ' ' + 'label_carrier_' + method.method_code + '_' + method.carrier_code,
+                    'checked': element.rates().length == 1 || element.isSelected}, value: method.carrier_code + '_' + method.method_code, checked: element.isSelected" aria-labelledby="label_method_flatrate_flatrate label_carrier_flatrate_flatrate" value="flatrate_flatrate" name="ko_unique_2"><!-- /ko -->
+                                                                    </td>
+                                                                    <td class="col col-price">
+                                                                        <!-- ko foreach: element.getRegion('price') --><!-- ko template: getTemplate() -->
+                                                                        <!-- ko if:  isDisplayShippingPriceExclTax -->
+                                                                        <span class="price"><span class="price" data-bind="text: getFormattedPrice(method.price_excl_tax)">$15.00</span></span>
+                                                                        <!-- /ko -->
+                                                                        <!-- ko ifnot: isDisplayShippingPriceExclTax --><!-- /ko -->
+                                                                        <!-- ko if:  (isDisplayShippingBothPrices && (method.price_excl_tax != method.price_incl_tax))--><!-- /ko -->
+                                                                        <!-- /ko --><!-- /ko -->
+                                                                    </td>
+                                                                    <td class="col col-method" data-bind="attr: {'id': 'label_method_' + method.method_code + '_' + method.carrier_code}, text: method.method_title" id="label_method_flatrate_flatrate">Fixed</td>
+                                                                    <td class="col col-carrier" data-bind="attr: {'id': 'label_carrier_' + method.method_code + '_' + method.carrier_code}, text: method.carrier_title" id="label_carrier_flatrate_flatrate">Flat Rate</td>
+                                                                </tr>
+                                                                <!-- ko if: method.error_message --><!-- /ko -->
+                                                                <!-- /ko -->
+                                                                <!-- /ko -->
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!-- /ko -->
+
+                                                    <div id="onepage-checkout-shipping-method-additional-load">
+                                                        <!-- ko foreach: getRegion('shippingAdditional') --><!-- /ko -->
+                                                    </div>
+                                                    <!-- ko if: errorValidationMessage().length --><!-- /ko -->
+                                                    <div class="actions-toolbar" id="shipping-method-buttons-container">
+                                                        <div class="primary">
+                                                            <button data-role="opc-continue" type="submit" class="button action continue primary">
+                                                                <span data-bind="i18n: 'Next'">Next</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form><!-- /ko -->
+                                                <!-- ko ifnot: rates().length > 0 --><!-- /ko -->
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <!-- /ko --><!-- /ko -->
+                                    <!-- /ko -->
+                                    <!-- /ko --><!-- /ko -->
+                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                    <!-- ko foreach: {data: elems, as: 'element'} -->
+                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                    <li id="payment" role="presentation" class="checkout-payment-method" data-bind="fadeVisible: isVisible" style="display: none;">
+                                        <div id="checkout-step-payment" class="step-content" data-role="content" role="tabpanel" aria-hidden="false">
+                                            <!-- ko if: (quoteIsVirtual) --><!--/ko-->
+                                            <form id="co-payment-form" class="form payments" novalidate="novalidate">
+                                                <input data-bind="attr: {value: getFormKey()}" type="hidden" name="form_key" value="mDtuLKA3rtoIXIs0">
+                                                <fieldset class="fieldset">
+                                                    <legend class="legend">
+                                                        <span data-bind="i18n: 'Payment Information'">Payment Information</span>
+                                                    </legend><br>
+                                                    <!-- ko foreach: getRegion('beforeMethods') -->
+                                                    <!-- ko template: getTemplate() -->
+                                                    <!-- ko foreach: {data: elems, as: 'element'} --><!-- /ko -->
+                                                    <!-- /ko -->
+                                                    <!-- /ko -->
+                                                    <div id="checkout-payment-method-load" class="opc-payment" data-bind="visible: isPaymentMethodsAvailable" style="display: none;">
+                                                        <!-- ko foreach: getRegion('payment-methods-list') -->
+                                                        <!-- ko template: getTemplate() -->
+                                                        <!-- ko if: isPaymentMethodsAvailable() --><!-- /ko -->
+                                                        <!-- ko ifnot: isPaymentMethodsAvailable() --><div class="no-payments-block" data-bind="i18n: 'No Payment Methods'">No Payment Methods</div><!-- /ko -->
+                                                        <!-- /ko -->
+                                                        <!-- /ko -->
+                                                    </div>
+                                                    <div class="no-quotes-block" data-bind="visible: isPaymentMethodsAvailable() == false">
+                                                        <!-- ko i18n: 'No Payment method available.'--><span>No Payment method available.</span><!-- /ko -->
+                                                    </div>
+                                                    <!-- ko foreach: getRegion('afterMethods') -->
+                                                    <!-- ko template: getTemplate() -->
+                                                    <!-- ko foreach: {data: elems, as: 'element'} -->
+                                                    <!-- ko if: hasTemplate() --><!-- ko template: getTemplate() -->
+                                                    <div class="payment-option _collapsible opc-payment-additional discount-code" data-bind="mageInit: {'collapsible':{'openedState': '_active'}}" data-collapsible="true" role="tablist">
+                                                        <div class="payment-option-title field choice" data-role="title" role="tab" aria-selected="false" aria-expanded="false" tabindex="0">
+                                                            <span class="action action-toggle" id="block-discount-heading" role="heading" aria-level="2">
+                                                                <!-- ko i18n: 'Apply Discount Code'--><span>Apply Discount Code</span><!-- /ko -->
+                                                            </span>
+                                                        </div>
+                                                        <div class="payment-option-content" data-role="content" role="tabpanel" aria-hidden="true" style="display: none;">
+                                                            <!-- ko foreach: getRegion('messages') -->
+                                                            <!-- ko template: getTemplate() -->
+                                                            <div data-role="checkout-messages" class="messages" data-bind="visible: isVisible(), click: removeAll">
+                                                                <!-- ko foreach: messageContainer.getErrorMessages() --><!--/ko-->
+                                                                <!-- ko foreach: messageContainer.getSuccessMessages() --><!--/ko-->
+                                                            </div>
+                                                            <!-- /ko -->
+                                                            <!--/ko-->
+                                                            <form class="form form-discount" id="discount-form">
+                                                                <div class="payment-option-inner">
+                                                                    <div class="field">
+                                                                        <label class="label" for="discount-code">
+                                                                            <span data-bind="i18n: 'Enter discount code'">Enter discount code</span>
+                                                                        </label>
+                                                                        <div class="control">
+                                                                            <input class="input-text" type="text" id="discount-code" name="discount_code" data-validate="{'required-entry':true}" data-bind="value: couponCode, attr:{disabled:isApplied() , placeholder: $t('Enter discount code')} " placeholder="Enter discount code">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="actions-toolbar">
+                                                                    <div class="primary">
+                                                                        <!-- ko ifnot: isApplied() -->
+                                                                        <button class="action action-apply" type="submit" data-bind="'value': $t('Apply Discount'), click: apply" value="Apply Discount">
+                                                                            <span><!-- ko i18n: 'Apply Discount'--><span>Apply Discount</span><!-- /ko --></span>
+                                                                        </button>
+                                                                        <!-- /ko -->
+                                                                        <!-- ko if: isApplied() --><!-- /ko -->
+                                                                    </div>
+                                                                </div>
+                                                                <!-- ko foreach: getRegion('captcha') -->
+                                                                <!-- ko template: getTemplate() -->
+                                                                <input name="captcha_form_id" type="hidden" data-bind="value: formId,  attr: {'data-scope': dataScope}" value="sales_rule_coupon_request" data-scope="">
+                                                                <!-- ko if: (isRequired() && getIsVisible())--><!-- /ko -->
+                                                                <!-- /ko -->
+                                                                <!-- /ko -->
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                    <!-- /ko --><!-- /ko -->
+                                                    <!-- /ko -->
+                                                    <!-- /ko -->
+                                                    <!-- /ko -->
+                                                </fieldset>
+                                            </form>
+                                        </div>
+                                    </li>
+                                    <!-- /ko --><!-- /ko -->
+                                    <!-- /ko -->
+                                    <!-- /ko --><!-- /ko -->
+                                    <!-- /ko -->
+                                    <!-- /ko -->
+                                    <!--/ko-->
+                                </ol>
+                            </div>
+
+                            <!-- ko foreach: getRegion('sidebar') -->
+                            <!-- ko template: getTemplate() -->
+                            <!-- /ko -->
+                            <!--/ko-->
+                            <!-- /ko -->
+                            <!--
+                            /**
+                             * Copyright © Magento, Inc. All rights reserved.
+                             * See COPYING.txt for license details.
+                             */
+                            -->
+
+                            <aside role="dialog" class="modal-custom opc-sidebar opc-summary-wrapper
+       custom-slide
+       " aria-describedby="modal-content-13" data-role="modal" data-type="custom" tabindex="0">
+                                <div data-role="focusable-start" tabindex="0"></div>
+                                <div class="modal-inner-wrap" data-role="focusable-scope">
+                                    <header class="modal-header">
+
+                                        <button class="action-close" data-role="closeBtn" type="button">
+                                            <span>Close</span>
+                                        </button>
+                                    </header>
+                                    <div id="modal-content-13" class="modal-content" data-role="content">
+                                        <div id="opc-sidebar" data-bind="afterRender:setModalElement, mageInit: {
+    'Magento_Ui/js/modal/modal':{
+        'type': 'custom',
+        'modalClass': 'opc-sidebar opc-summary-wrapper',
+        'wrapperClass': 'checkout-container',
+        'parentModalClass': '_has-modal-custom',
+        'responsive': true,
+        'responsiveClass': 'custom-slide',
+        'overlayClass': 'modal-custom-overlay',
+        'buttons': []
+    }}">
+
+                                            <!-- ko foreach: getRegion('summary') -->
+                                            <!-- ko template: getTemplate() -->
+                                            <div class="opc-block-summary" data-bind="blockLoader: isLoading">
+                                                <span data-bind="i18n: 'Order Summary'" class="title">Order Summary</span>
+                                                <!-- ko foreach: elems() -->
+                                                <!-- ko template: getTemplate() -->
+                                                <!-- ko if: isDisplayed() --><!-- /ko -->
+                                                <!-- /ko -->
+                                                <!-- ko template: getTemplate() -->
+                                                <!-- ko foreach: {data: elems, as: 'element'} --><!-- /ko -->
+                                                <!-- /ko -->
+                                                <!-- ko template: getTemplate() -->
+                                                <div class="block items-in-cart" data-bind="mageInit: {'collapsible':{'openedState': 'active', 'active': isItemsBlockExpanded()}}" data-collapsible="true" role="tablist">
+                                                    <div class="title" data-role="title" role="tab" aria-selected="false" aria-expanded="false" tabindex="0">
+                                                        <strong role="heading" aria-level="1">
+                                                            <!-- ko if: maxCartItemsToDisplay < getCartLineItemsCount() --><!-- /ko -->
+                                                            <!-- ko if: maxCartItemsToDisplay < getCartLineItemsCount() --><!-- /ko -->
+                                                            <span data-bind="text: getCartSummaryItemsCount()">3</span>
+                                                            <!-- ko if: getCartLineItemsCount() === 1 --><!-- ko i18n: 'Item in Cart' --><span>Item in Cart</span><!-- /ko --><!-- /ko -->
+                                                            <!-- ko if: getCartLineItemsCount() > 1 --><!-- /ko -->
+                                                        </strong>
+                                                    </div>
+                                                    <div class="content minicart-items" data-role="content" role="tabpanel" aria-hidden="true" style="display: none;">
+                                                        <div class="minicart-items-wrapper overflowed">
+                                                            <ol class="minicart-items">
+                                                                <!-- ko foreach: items() -->
+                                                                <li class="product-item">
+                                                                    <div class="product">
+                                                                        <!-- ko foreach: $parent.elems() --><!-- ko template: getTemplate() -->
+                                                                        <!-- ko foreach: getRegion('before_details') -->
+                                                                        <!-- ko template: getTemplate() -->
+                                                                        <span class="product-image-container" data-bind="attr: {'style': 'height: ' + getHeight($parents[1]) + 'px; width: ' + getWidth($parents[1]) + 'px;' }" style="height: 80px; width: 80px;">
+                                                                            <span class="product-image-wrapper">
+                                                                                <img data-bind="attr: {'src': getSrc($parents[1]), 'width': getWidth($parents[1]), 'height': getHeight($parents[1]), 'alt': getAlt($parents[1]), 'title': getAlt($parents[1]) }" src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/3258447cfc06cbfeda69d7f1924ed92b/2/_/2.jpg" width="80" height="80" alt="Philips HR1861 Whole Fruit Juicer" title="Philips HR1861 Whole Fruit Juicer">
+                                                                            </span>
+                                                                        </span>
+                                                                        <!-- /ko -->
+                                                                        <!-- /ko -->
+                                                                        <div class="product-item-details">
+
+                                                                            <div class="product-item-inner">
+                                                                                <div class="product-item-name-block">
+                                                                                    <strong class="product-item-name" data-bind="html: $parent.name">Philips HR1861 Whole Fruit Juicer</strong>
+                                                                                    <div class="details-qty">
+                                                                                        <span class="label"><!-- ko i18n: 'Qty' --><span>Qty</span><!-- /ko --></span>
+                                                                                        <span class="value" data-bind="text: $parent.qty">3</span>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- ko foreach: getRegion('after_details') -->
+                                                                                <!-- ko template: getTemplate() -->
+                                                                                <div class="subtotal">
+                                                                                    <!-- ko if: isPriceInclTaxDisplayed() && !getRegion('row_incl_tax') --><!-- /ko -->
+                                                                                    <!-- ko if: isPriceInclTaxDisplayed() && getRegion('row_incl_tax') --><!-- /ko -->
+                                                                                    <!-- ko if: isPriceExclTaxDisplayed() && !getRegion('row_excl_tax') --><!-- /ko -->
+                                                                                    <!-- ko if: isPriceExclTaxDisplayed() && getRegion('row_excl_tax') -->
+                                                                                    <span class="price-excluding-tax" data-bind="attr:{'data-label': $t('Excl. Tax')}" data-label="Excl. Tax">
+                                                                                        <!-- ko foreach: getRegion('row_excl_tax') -->
+                                                                                        <!-- ko template: getTemplate() -->
+                                                                                        <!-- ko if:  (isDisplayPriceWithWeeeDetails($parents[2])) --><!-- /ko -->
+                                                                                        <!-- ko ifnot: (isDisplayPriceWithWeeeDetails($parents[2])) -->
+                                                                                        <span class="cart-price">
+                                                                                            <span class="price" data-bind="text: getFormattedPrice(getRowDisplayPriceExclTax($parents[2]))">$531.00</span>
+                                                                                        </span>
+                                                                                        <!-- /ko -->
+                                                                                        <!--ko if:  (getWeeeTaxApplied($parents[2]).length > 0) --><!-- /ko -->
+                                                                                        <!-- /ko -->
+                                                                                        <!-- /ko -->
+                                                                                    </span>
+                                                                                    <!-- /ko -->
+                                                                                </div>
+                                                                                <!-- /ko -->
+                                                                                <!-- /ko -->
+                                                                            </div>
+
+                                                                            <!-- ko if: (JSON.parse($parent.options).length > 0)-->
+                                                                            <div class="product options" data-bind="mageInit: {'collapsible':{'openedState': 'active'}}" data-collapsible="true" role="tablist">
+                                                                                <span data-role="title" class="toggle" role="tab" aria-selected="false" aria-expanded="false" tabindex="0"><!-- ko i18n: 'View Details' --><span>View Details</span><!-- /ko --></span>
+                                                                                <div data-role="content" class="content" role="tabpanel" aria-hidden="true" style="display: none;">
+                                                                                    <strong class="subtitle"><!-- ko i18n: 'Options Details' --><span>Options Details</span><!-- /ko --></strong>
+                                                                                    <dl class="item-options">
+                                                                                        <!--ko foreach: JSON.parse($parent.options)-->
+                                                                                        <dt class="label" data-bind="text: label">Size</dt>
+                                                                                        <!-- ko if: ($data.full_view)--><!-- /ko -->
+                                                                                        <!-- ko ifnot: ($data.full_view)-->
+                                                                                        <dd class="values" data-bind="html: value">M</dd>
+                                                                                        <!-- /ko -->
+
+                                                                                        <dt class="label" data-bind="text: label">Color</dt>
+                                                                                        <!-- ko if: ($data.full_view)--><!-- /ko -->
+                                                                                        <!-- ko ifnot: ($data.full_view)-->
+                                                                                        <dd class="values" data-bind="html: value">Blue</dd>
+                                                                                        <!-- /ko -->
+                                                                                        <!-- /ko -->
+                                                                                    </dl>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- /ko -->
+                                                                        </div>
+                                                                        <!-- ko foreach: getRegion('item_message') -->
+                                                                        <!-- ko template: getTemplate() -->
+                                                                        <!-- ko if: getMessage($parents[1]) --><!-- /ko -->
+                                                                        <!-- /ko -->
+                                                                        <!-- /ko -->
+                                                                        <!-- /ko --><!-- /ko -->
+                                                                    </div>
+                                                                </li>
+                                                                <!-- /ko -->
+                                                            </ol>
+                                                        </div>
+                                                    </div>
+                                                    <!-- ko if: maxCartItemsToDisplay < getCartLineItemsCount() --><!-- /ko -->
+                                                </div>
+                                                <!-- /ko -->
+                                                <!-- ko template: getTemplate() -->
+                                                <!-- ko foreach: {data: elems, as: 'element'} --><!-- /ko -->
+                                                <!-- /ko -->
+                                                <!-- /ko -->
+                                            </div>
+                                            <!-- /ko -->
+                                            <!--/ko-->
+
+                                            <div class="opc-block-shipping-information">
+                                                <!-- ko foreach: getRegion('shipping-information') -->
+                                                <!-- ko template: getTemplate() -->
+                                                <!-- ko if: (isVisible()) --><!--/ko-->
+                                                <!-- /ko -->
+                                                <!--/ko-->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div data-role="focusable-end" tabindex="0"></div>
+                            </aside>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+

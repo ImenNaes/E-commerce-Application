@@ -1,0 +1,97 @@
+﻿@model BLL.Entities.ProductType
+
+
+
+
+@using (Html.BeginForm("Create", "ProductTypes", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN VALIDATION STATES-->
+            <div class="portlet box green">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-gift"></i>Create Type product
+                    </div>
+
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    <form action="#" id="form_sample_3" class="form-horizontal">
+                        <div class="form-body" style="display: grid; ">
+                            <h3 class="form-section"> <small> </small></h3>
+                            <div class="alert alert-danger display-hide">
+                                <button class="close" data-close="alert"></button>
+
+                            </div>
+                            <div class="alert alert-success display-hide">
+                                <button class="close" data-close="alert"></button>
+                                Your form validation is successful!
+                            </div>
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.NameEn, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.NameEn, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.NameEn, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.NameAr, htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.NameAr, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.NameAr, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CategID, "Choose a category", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    @Html.DropDownListFor(model => model.CategID,
+                                                            ViewBag.categories as SelectList, new { @class = "form-control" })
+
+                                    @Html.ValidationMessageFor(model => model.CategID, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("Icon", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-10">
+                                    <input type="file" name="picture" id="picture" data-val-required="you must select image" />
+                                    <span class='field-validation-valid text-danger' data-valmsg-for="file" data-valmsg-replace='true'></span>
+                                </div>
+                            </div>
+
+                   
+
+                        </div>
+
+
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn green">Create</button>
+                                    <button type="button" class="btn default">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- END FORM-->
+
+                </div>
+                <!-- END VALIDATION STATES-->
+            </div>
+        </div>
+    </div>
+
+
+
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

@@ -1,0 +1,207 @@
+﻿@model BLL.Entities.Product
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm("Create", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="row">
+        <div class="col-md-12">
+            <!-- BEGIN VALIDATION STATES-->
+            <div class="portlet box green">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-gift"></i>Create Product
+                    </div>
+                    
+                </div>
+                <div class="portlet-body form">
+                    <!-- BEGIN FORM-->
+                    <form action="#" id="form_sample_3" class="form-horizontal">
+                        <div class="form-body" style="display: grid; ">
+                            <h3 class="form-section"> <small> </small></h3>
+                            <div class="alert alert-danger display-hide">
+                                <button class="close" data-close="alert"></button>
+
+                            </div>
+                            <div class="alert alert-success display-hide">
+                                <button class="close" data-close="alert"></button>
+                                Your form validation is successful!
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.NameEn, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.NameEn, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.NameEn, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.NameAr, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.NameAr, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.NameAr, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.DescriptionEn, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.DescriptionEn, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DescriptionEn, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.DescriptionAr, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.DescriptionAr, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.DescriptionAr, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.FromPrice, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.FromPrice, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.FromPrice, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Discount, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.Discount, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Discount, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.ExpiryDate, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.ExpiryDate, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.ExpiryDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Code, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.EndDate, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.StartDate, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                    @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.CategID, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                        @Html.DropDownListFor(model => model.CategID,
+                                                                ViewBag.categories as SelectList, new { @class = "form-control" })
+
+                                        @Html.ValidationMessageFor(model => model.CategID, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.TypeID, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                        @Html.DropDownListFor(model => model.TypeID,
+                                                                ViewBag.Types as SelectList, new { @class = "form-control" })
+
+                                        @Html.ValidationMessageFor(model => model.TypeID, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Sizeid, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                    @Html.DropDownListFor(model => model.Sizeid,
+                                                ViewBag.sizes as SelectList, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.Sizes, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.productstatus, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                    @Html.EnumDropDownListFor(model => model.productstatus, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.productstatus, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.MainImage.ImageContent, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4">
+                                    <input type="file" class="form-control" name="picturefile" id="picturefile" @*data-val="true"*@ data-val-required="you must select image" multiple="multiple" />
+                                    <span class='field-validation-valid text-danger' data-valmsg-for="file" data-valmsg-replace='true'></span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.MainImage.ProductSmallImages, htmlAttributes: new { @class = "control-label col-md-3" })
+                                <div class="col-md-4" style="display: inline-flex">
+                                    <input type="file" class="form-control" name="smallimageList" id="smallimageList" @*data-val="true"*@ data-val-required="you must select image" multiple="multiple" />
+                                    <span class='field-validation-valid text-danger' data-valmsg-for="file" data-valmsg-replace='true'></span>
+
+                                    <button class="btn btn-small" id="btnAddSmallImages" onclick="AddSmallImages();">Add to list small images</button>
+                                </div>
+                            </div>
+                            <div class="container" style="width: 100%;" id="smallimagesContainer">
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-actions">
+                            <div class="row">
+                                <div class="col-md-offset-3 col-md-9">
+                                    <button type="submit" class="btn green">Submit</button>
+                                    <button type="button" class="btn default">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- END FORM-->
+                  
+                </div>
+                <!-- END VALIDATION STATES-->
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+}
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        function cloneMegaMenu() {
+            alert(image);
+        }
+        //$('#btnAddSmallImages').click(function () {
+          
+        //    //var image = $('#smallimageList').val();
+          
+        //    //$('#smallimagesContainer').append(image);
+        //});
+    });
+
+</script>

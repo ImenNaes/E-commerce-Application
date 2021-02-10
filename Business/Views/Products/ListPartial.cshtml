@@ -1,0 +1,93 @@
+﻿@model PagedList.IPagedList<BLL.Entities.Product>
+
+@using DAL;
+@using PagedList.Mvc;
+
+<ol class="products list items product-items row">
+    @foreach (var item in Model)
+    {
+        <li class="item product product-item">
+            <div class="product-item-info" data-container="product-grid">
+                <div class="item-inner">
+                    <div class="box-image">
+                        <!--LABEL PRODUCT-->
+                        <!--END LABEL PRODUCT-->
+                        <a href="@Url.Action("ProductDetails","Products", new { prodid= item.ID})" class="product photo product-item-photo" tabindex="-1">
+                            @{
+                                if (item.MainImage == null)
+                                {
+                                    <span class="product-image-container" style="width:300px;">
+                                        <span class="product-image-wrapper" style="padding-bottom: 100%;">
+                                            <img src="~/Content/images/9_4.jpg" />
+                                        </span>
+                                    </span>
+
+                                }
+                                else
+                                {
+                                    <span class="product-image-container" style="width:300px;">
+                                        <span class="product-image-wrapper" style="padding-bottom: 100%;">
+                                            @item.MainImage
+                                        </span>
+                                    </span>
+                                }
+                            }
+                            @*<img class="product-image-photo lazyload" src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/lazyloading/blank.png" data-src="http://magento2.flytheme.net/themes/sm_zumi/pub/media/catalog/product/cache/1d7dd4a209e524c4110c6fdc88b9ba81/2/3/23_7.jpg" width="" height="" alt="Lipstick Temperature changed" />*@
+
+                        </a>
+                    </div>
+                    <div class="product details product-item-details box-info">
+                        <h2 class="product name product-item-name product-name">
+                            <a class="product-item-link" href="@Url.Action("ProductDetails","Products", new { prodid= item.ID})">@item.NameEn</a>
+                        </h2>
+                        <div class="price-box price-final_price" data-role="priceBox" data-product-id="2086" data-price-box="product-id-2086">
+                            <span class="price-container price-final_price&#x20;tax&#x20;weee">
+                                <span id="product-price-2086" data-price-amount="63" data-price-type="finalPrice" class="price-wrapper ">
+                                    <span class="price">@item.FromPrice</span>
+                                </span>
+                            </span>
+                        </div>
+                        <div class="product-reviews-summary short">
+                            <div class="rating-summary">
+                                <span class="label"><span>Rating:</span></span>
+                                <div class="rating-result" title="100%"><span style="width:100%"><span>100%</span></span></div>
+                            </div>
+                            <div class="reviews-actions">
+                                <a class="action view" href="@Url.Action("ProductDetails","Products", new { prodid= item.ID})">
+                                    1&nbsp;
+                                    <span>Review</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!--button Cart-->
+                        <div class="product actions">
+                            <form data-role="tocart-form" action="@Url.Action("Index","Carts")" method="post">
+                                <input name="form_key" type="hidden" value="2X8ZrwAUSm0zmhri" />
+                                <button type="submit" class="action tocart btn-action btn-cart">
+                                    <span>Add to Cart</span>
+                                </button>
+                            </form>
+                        </div>
+                        <!--End: Button Cart-->
+                    </div>
+                </div>
+                <div class="action-bottom">
+                    <a href="@Url.Action("Index","Widhlist")" data-post='' class="action towishlist btn-action link-wishlist" data-action="add-to-wishlist" title="Add to Wish List">
+                        <span>Add to Wish List</span>
+                    </a>
+                </div>
+            </div>
+        </li>
+    }
+
+</ol>
+
+<div id='Paging' style="text-align: center">
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+    of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("ListPartial", new { ViewBag.typeID, page }))
+</div>
+
+
+

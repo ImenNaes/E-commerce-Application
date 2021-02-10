@@ -1,0 +1,123 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+</head>
+<body data-container="body" data-mage-init='{"loaderAjax": {}, "loader": { "icon": "http://magento2.flytheme.net/themes/sm_zumi/pub/static/frontend/Sm/zumi/en_US/images/loader-2.gif"}}' class="header-1-style home-1-style footer-1-style layout-full_width  page-products categorypath-about-us category-about-us catalog-category-view page-layout-1column">
+
+    <div class="page-wrapper">
+        <div class="header-top-wrapper">
+            <div class="page-title-wrapper">
+                <h2 class="page-title">
+                    <span class="base" data-ui-id="page-title-wrapper">Shopping Cart</span>
+                </h2>
+            </div>
+        </div>
+        <main id="maincontent" class="page-main">
+            <a id="contentarea" tabindex="-1"></a>
+            <div class="columns col1-layout">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="page messages">
+                                <div data-placeholder="messages"></div>
+                                <div data-bind="scope: 'messages'">
+                                    <!-- ko if: cookieMessages && cookieMessages.length > 0 -->
+                                    <div role="alert" data-bind="foreach: { data: cookieMessages, as: 'message' }" class="messages">
+                                        <div data-bind="attr: { class: 'message-' + message.type + ' ' + message.type + ' message', 'data-ui-id': 'message-' + message.type }">
+                                            <div data-bind="html: message.text"></div>
+                                        </div>
+                                    </div><!-- /ko --><!-- ko if: messages().messages && messages().messages.length > 0 -->
+                                    <div role="alert" data-bind="foreach: { data: messages().messages, as: 'message' }" class="messages">
+                                        <div data-bind="attr: { class: 'message-' + message.type + ' ' + message.type + ' message', 'data-ui-id': 'message-' + message.type }"><div data-bind="html: message.text"></div></div>
+                                    </div><!-- /ko -->
+                                </div>
+                            </div>
+                            <div class="column main">
+                                <input name="form_key" type="hidden" value="2X8ZrwAUSm0zmhri" />
+                                <div id="authenticationPopup" data-bind="scope:'authenticationPopup'" style="display: none;">
+                                </div>
+                                @*<script data-role="msrp-popup-template" type="text/x-magento-template">*@
+                                    <div id="map-popup-click-for-price" class="map-popup">
+                                        <div class="popup-header">
+                                            <strong class="title" id="map-popup-heading-price"></strong>
+                                        </div>
+                                        <div class="popup-content">
+                                            <div class="map-info-price" id="map-popup-content">
+                                                <div class="price-box">
+                                                    <div class="map-msrp" id="map-popup-msrp-box">
+                                                        <span class="label">Price</span>
+                                                        <span class="old-price map-old-price" id="map-popup-msrp">
+                                                            <span class="price"></span>
+                                                        </span>
+                                                    </div>
+                                                    <div class="map-price" id="map-popup-price-box">
+                                                        <span class="label">Actual Price</span>
+                                                        <span id="map-popup-price" class="actual-price"></span>
+                                                    </div>
+                                                </div>
+                                                <form action="" method="POST" class="map-form-addtocart">
+                                                    <input type="hidden" name="product" class="product_id" value="" />
+                                                    <button type="button"
+                                                            title="Add to Cart"
+                                                            class="action tocart primary">
+                                                        <span>Add to Cart</span>
+                                                    </button>
+                                                    <div class="additional-addtocart-box">
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="map-text" id="map-popup-text">
+                                                Our price is lower than the manufacturer&#039;s &quot;minimum advertised price.&quot; As a result, we cannot show you the price in catalog or the product page. <br><br> You have no obligation to purchase the product once you know the price. You can simply remove the item from your cart.
+                                            </div>
+                                        </div>
+                                    </div>
+                                @*</script>*@
+                                @*<script data-role="msrp-info-template" type="text/x-magento-template">*@
+                                    <div id="map-popup-what-this" class="map-popup">
+                                        <div class="popup-header">
+                                            <strong class="title" id="map-popup-heading-what-this"></strong>
+                                        </div>
+                                        <div class="popup-content">
+                                            <div class="map-help-text" id="map-popup-text-what-this">
+                                                Our price is lower than the manufacturer&#039;s &quot;minimum advertised price.&quot; As a result, we cannot show you the price in catalog or the product page. <br><br> You have no obligation to purchase the product once you know the price. You can simply remove the item from your cart.
+                                            </div>
+                                        </div>
+                                    </div>
+                                @*</script>*@
+
+                                <div class="cart-empty">
+                                    <p>You have no items in your shopping cart.</p>
+                                    <p>Click <a href="http://magento2.flytheme.net/themes/sm_zumi/french/">here</a> to continue shopping.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+
+        <script type="text/javascript">
+            //require([
+            //    'jquery',
+            //    'quickView',
+            //    'domReady!'
+            //], function ($, cartQuickView) {
+            //    var quickViewCf = {
+            //        isQuickView: true,
+            //        isAjaxCart: true,
+            //        product_container: '.products-grid .item-inner,.products-list .item-inner,.products-grid .item',
+            //        button_container: '.box-image .button-action,.box-image-list,.action-bottom',
+            //        label_button: 'Quick View',
+            //        base_url: 'http://magento2.flytheme.net/themes/sm_zumi/french/'
+            //    }
+            //    $(quickViewCf.product_container).cartQuickView(quickViewCf);
+            //    $(document).on("afterAjaxProductsLoaded", function (event) {
+            //        $(quickViewCf.product_container).cartQuickView(quickViewCf);
+            //    });
+            //});
+        </script>
+
+    </div>
+</body>
+</html>

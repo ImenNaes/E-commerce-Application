@@ -1,0 +1,63 @@
+﻿@model IEnumerable<BLL.Entities.Product>
+@using DAL;
+
+
+
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 col-md-4">
+                <div class="item product product-item">
+                    <div class="item-inner clearfix">
+                        <div class="box-image">
+                            <a href="@Url.Action("ProductDetails","Products", new { prodid= item.ID})" class="product photo product-item-photo" tabindex="-1">
+                                <span class="product-image-container" style="width:100px;">
+                                    <span class="product-image-wrapper" style="padding-bottom: 100%;">
+                                        @{
+                                            if (item.Image == null)
+                                            {
+                                                <img src="~/Content/images/9_4.jpg" class="product-image-photo lazyload" />
+                                            }
+                                            else
+                                            {
+                                                @Html.Image(item.Image, "product-image-photo lazyload");
+                                            }
+                                        }
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="product details product-item-details box-info">
+                            <h2 class="product name product-item-name product-name">
+                                <a class="product-item-link" href="@Url.Action("ProductDetails","Products", new { prodid= item.ID})">@item.NameEn</a>
+                            </h2>
+                            <div class="price-box price-final_price" data-role="priceBox" data-product-id="2052" data-price-box="product-id-2052">
+                                <span class="price-container price-final_price&#x20;tax&#x20;weee">
+                                    <span id="product-price-2052" data-price-amount="560" data-price-type="finalPrice" class="price-wrapper ">
+                                        <span class="price">@item.FromPrice DT</span>
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="product-reviews-summary short">
+                                <div class="rating-summary">
+                                    <span class="label">
+                                        <span>Rating:</span>
+                                    </span>
+                                    <div class="rating-result" title="91%">
+                                        <span style="width:91%">
+                                            <span>91%</span>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="reviews-actions">
+                                    <a class="action view" href="http://magento2.flytheme.net/themes/sm_zumi/default/sony-w800s-20-1-mp-digital-camera.html#reviews">
+                                        2&nbsp;<span>Reviews</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+
